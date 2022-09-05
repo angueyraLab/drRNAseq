@@ -2,9 +2,9 @@
   "content": [
     {
       "content": null,
-      "created": "2022-09-01T19:19:02.544161Z",
+      "created": "2022-09-05T16:28:39.580454Z",
       "format": null,
-      "last_modified": "2022-09-01T19:17:30.562360Z",
+      "last_modified": "2022-09-05T16:27:33.716359Z",
       "mimetype": null,
       "name": "iwren.ipynb",
       "path": "examples/xeus-wren/iwren.ipynb",
@@ -13,9 +13,9 @@
       "writable": true
     }
   ],
-  "created": "2022-09-01T19:19:02.544161Z",
+  "created": "2022-09-05T16:28:39.580454Z",
   "format": "json",
-  "last_modified": "2022-09-01T19:19:02.544161Z",
+  "last_modified": "2022-09-05T16:28:39.580454Z",
   "mimetype": null,
   "name": "xeus-wren",
   "path": "examples/xeus-wren",
