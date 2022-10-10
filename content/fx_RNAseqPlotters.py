@@ -272,7 +272,6 @@ def formatBarPlot_Hoang2020_Ret(geneSymbol, ax=None, pctPlot=False):
     if pctPlot:
         ax.set_ylabel('% expressing', fontproperties=fontLabels)
     ax.set_title(geneSymbol, fontproperties=fontTitle)
-
 def plotBars_Hoang2020_PhotoDev(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
     """Creates a bar plot for a single gene for data from Hoang et al. (2020) (https://doi.org/10.1126/science.abb8598)
     Arguments:
@@ -282,11 +281,60 @@ def plotBars_Hoang2020_PhotoDev(barData, geneSymbol, ax=None, pC=None, pctPlot=F
         pC              : photoreceptor colors for plotting
     """
     n = np.arange(1,8)
-    delta = 9
+    delta = 0
+    if pctPlot:
+        delta = 8
+    h_start = 2 + delta
+    h_end = 9 + delta
+    h = barData.iloc[0,h_start:h_end].to_numpy()
+    # color array for bar plot
+    if not pC:
+        pC = {
+            'RPC' : "#DADADA",
+            'PRP' : "#dfdac8",
+            'Cle' : '#dacd9a',
+            'Clm' : '#dcc360',
+            'Cll' : '#cca819',
+            'C' : '#ffd429',
+            'R' : '#7d7d7d',
+        }
+    barColors = [
+        pC['RPC'],pC['PRP'],
+        pC['Cle'],pC['Clm'],pC['Cll'],
+        pC['C'],pC['R']
+    ]
+    if not ax:
+        ax = plt.gca()
+    pH = ax.bar(n, h, width=0.8, bottom=None, align='center', data=None, color=barColors)
+    formatBarPlot_Hoang2020_PhotoDev(geneSymbol, ax=ax, pctPlot=pctPlot)
+    return pH
+
+def formatBarPlot_Hoang2020_PhotoDev(geneSymbol, ax=None, pctPlot=False):
+    if not ax:
+        ax = plt.gca()
+    [fontTicks, fontLabels, fontTitle] = defaultFonts(ax = ax);
+    ax.set_xticks(np.arange(1,8))
+    ax.set_xticklabels(['RPC','PRPC','Cone$_{larval-early}$','Cone$_{larval-mid}$','Cone$_{larval-late}$','Cone','Rod']);
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right", va="center",rotation_mode="anchor")
+    ax.set_ylabel('avg. counts', fontproperties=fontLabels)
+    if pctPlot:
+        ax.set_ylabel('% expressing', fontproperties=fontLabels)
+    ax.set_title(geneSymbol, fontproperties=fontTitle)
+
+def plotBars_Hoang2020_PhotoDev_withcontaminatedlarvalrods(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
+    """Creates a bar plot for a single gene for data from Hoang et al. (2020) (https://doi.org/10.1126/science.abb8598)
+    Arguments:
+        barData         : a 1D numpy array
+        geneSymbol      : gene Symbol for plot title
+        ax              : pyplot axis handle
+        pC              : photoreceptor colors for plotting
+    """
+    n = np.arange(1,9)
+    delta = 0
     if pctPlot:
         delta = 9
     h_start = 2 + delta
-    h_end = 9 + delta
+    h_end = 10 + delta
     h = barData.iloc[0,h_start:h_end].to_numpy()
     # color array for bar plot
     if not pC:
@@ -312,11 +360,11 @@ def plotBars_Hoang2020_PhotoDev(barData, geneSymbol, ax=None, pC=None, pctPlot=F
     formatBarPlot_Hoang2020_PhotoDev(geneSymbol, ax=ax, pctPlot=pctPlot)
     return pH
 
-def formatBarPlot_Hoang2020_PhotoDev(geneSymbol, ax=None, pctPlot=False):
+def formatBarPlot_Hoang2020_PhotoDev_withcontaminatedlarvalrods(geneSymbol, ax=None, pctPlot=False):
     if not ax:
         ax = plt.gca()
     [fontTicks, fontLabels, fontTitle] = defaultFonts(ax = ax);
-    ax.set_xticks(np.arange(1,12))
+    ax.set_xticks(np.arange(1,9))
     ax.set_xticklabels(['RPC','PRPC','Cone$_{larval-early}$','Cone$_{larval-mid}$','Cone$_{larval-late}$','Cone$','Rod$_{larval-late}$','Rod']);
     plt.setp(ax.get_xticklabels(), rotation=45, ha="right", va="center",rotation_mode="anchor")
     ax.set_ylabel('avg. counts', fontproperties=fontLabels)
@@ -354,36 +402,6 @@ def plotBars_Nerli2022(barData, geneSymbol, ax=None, pC=None):
     formatBarPlot_Nerli2022(geneSymbol, ax=ax)
     return pH
 
-def plotBars_Nerli2022(barData, geneSymbol, ax=None, pC=None):
-    """Creates a bar plot for a single gene
-    Arguments:
-        barData         : a 1D numpy array
-        geneSymbol      : gene Symbol for plot title
-        ax              : pyplot axis handle
-        pC              : photoreceptor colors for plotting
-    """
-    n = np.arange(0,5) # Retinal progenitors
-    n = np.append(n, 4.5 + np.arange(1,6)) # Photoreceptors
-    n = np.append(n, 10 + np.arange(1,6)) # Amacrine/Horizontal cells
-    n = np.append(n, 15.5 + np.arange(1,6)) # Retinal ganglion cells
-    h_start = 1
-    h_end = 21
-    h = barData.iloc[0,h_start:h_end].to_numpy()
-    # color array for bar plot
-    if not pC:
-        pC = {'RPC' : '#DADADA', 'PR' : '#dcc360', 'HC_AC' : '#3DF591', 'RGC' : '#F53D59'}
-    barColors = [
-        pC['RPC'],pC['RPC'],pC['RPC'],pC['RPC'],pC['RPC'],
-        pC['PR'],pC['PR'],pC['PR'],pC['PR'],pC['PR'],
-        pC['HC_AC'],pC['HC_AC'],pC['HC_AC'],pC['HC_AC'],pC['HC_AC'],
-        pC['RGC'],pC['RGC'],pC['RGC'],pC['RGC'],pC['RGC'],
-    ]
-    if not ax:
-        ax = plt.gca()
-    pH = ax.bar(n, h, width=0.8, bottom=None, align='center', data=None, color=barColors)
-    formatBarPlot_Nerli2022(geneSymbol, ax=ax)
-    return pH
-
 def formatBarPlot_Nerli2022(geneSymbol, ax=None):
     if not ax:
         ax = plt.gca()
@@ -397,7 +415,7 @@ def formatBarPlot_Nerli2022(geneSymbol, ax=None):
 """heatmaps"""
 
 def heatmap_general(data, row_labels, col_labels, groupsN, groupsColors, groupsLabels, ax=None,
-            cbar_kw={}, cbarlabel="", **kwargs):
+            cbar_kw={}, cbarlabel="", groupRotation=0, **kwargs):
     """Creates a heatmap for a list of genes
     Arguments:
         data       : A 2D numpy array of shape (N,M)
@@ -464,7 +482,10 @@ def heatmap_general(data, row_labels, col_labels, groupsN, groupsColors, groupsL
         ax.axvline(x = np.sum(groupsN[:i+1])-.5, color = 'white', linewidth = 3, alpha = 1, solid_capstyle='butt')
         ax.plot([np.sum(groupsN[:i])-.5,np.sum(groupsN[:i+1])-.5], [-.5,-.5], '-', lw=8, color = groupsColors[i], solid_capstyle='butt')
         ax.plot([np.sum(groupsN[:i])-.5,np.sum(groupsN[:i+1])-.5], [data.shape[0]-.5,data.shape[0]-.5], '-', lw=8, color = groupsColors[i], solid_capstyle='butt')
-        ax.text(((np.sum(groupsN[:i])+np.sum(groupsN[:i+1]))/2)-.5, -1.0, groupsLabels[i], color = groupsColors[i], horizontalalignment='center', fontproperties=fontTicks)
+        if groupRotation==0:
+            ax.text(((np.sum(groupsN[:i])+np.sum(groupsN[:i+1]))/2)-.5, -1.0, groupsLabels[i], color = groupsColors[i], ha='center', fontproperties=fontTicks, rotation=groupRotation)
+        else:
+            ax.text(((np.sum(groupsN[:i])+np.sum(groupsN[:i+1]))/2)-.5, -1.0, groupsLabels[i], color = groupsColors[i], ha='left', va='bottom', rotation_mode="anchor", fontproperties=fontTicks, rotation=groupRotation)
     return im, cbar
 
 def heatmap(heatmapData, ax=None, pC=None, norm=False):
@@ -493,6 +514,7 @@ def heatmap(heatmapData, ax=None, pC=None, norm=False):
         ax = plt.gca()
     hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, ax=ax, cbarlabel=cbarlabel)
     return hmH, cbH
+
 
 
 def heatmap_Ogawa2021(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
@@ -610,52 +632,6 @@ def heatmap_Nerli2022(heatmapData, ax=None, pC=None, norm=False):
     hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, ax=ax, cbarlabel=cbarlabel)
     return hmH, cbH
 
-
-def heatmap_Hoang2020_PhotoDev(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
-    """Main call for heatmap for reanalyzed data from Hoang et al. (2020)
-    Arguments:
-        heatmapData : pandas dataframe containing expression data to be plotted
-        pC : dict with custom photoreceptor colors
-        norm : boolean that determines if plotting is raw data or row-normalized
-    Returns:
-        hmH : heatmap handle
-        cbH : colorbar handle
-    """
-    genenames = heatmapData['symbol'].values
-    cbarlabel = "avg."
-    delta = 0
-    if pctPlot:
-        delta = 11
-        cbarlabel = "%"
-    data = heatmapData.iloc[0:,2+delta:13+delta].values #avg. counts or percent expression
-    if norm:
-        data = heatmapData.iloc[0:,2+delta:13+delta].apply(lambda x: x/x.max(), axis=1).values #normalized by max
-        cbarlabel = "norm. " + cbarlabel
-    groupsN = np.array([1,1,1,1,1,1,1,1,1,1,1])
-
-    if not pC:
-        pC = {
-            'RPC' : "#DADADA",
-            'PRP' : "#dfdac8",
-            'Cle' : '#dacd9a',
-            'Clm' : '#dcc360',
-            'Cll' : '#cca819',
-            'C' : '#ffd429',
-            'Rll' : '#a3a3a3',
-            'R' : '#7d7d7d',
-         }
-    groupsColors = np.array([
-        pC['RPC'],pC['PRP'],
-        pC['Cle'],pC['Clm'],pC['Cll'],
-        pC['C'],
-        pC['Rll'],pC['R']
-    ])
-    groupsLabels = np.array(['RPC','PRPC','Cone$_{larval-early}$','Cone$_{larval-mid}$','Cone$_{larval-late}$','Cone$','Rod$_{larval-late}$','Rod'])
-    if not ax:
-        ax = plt.gca()
-    hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, groupRotation = 45, ax=ax, cbarlabel=cbarlabel)
-    return hmH, cbH
-
 def heatmap_Hoang2020_Ret(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
     """Main call for heatmap for reanalyzed data from Hoang et al. (2020)
     Arguments:
@@ -678,31 +654,103 @@ def heatmap_Hoang2020_Ret(heatmapData, ax=None, pC=None, pctPlot=False, norm=Fal
         cbarlabel = "norm. " + cbarlabel
     groupsN = np.array([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
     if not pC:
-        pC = {
-            'RPC' : '#DADADA',
-            'PRPC' : '#dfdac8',
-            'Cones_larval' : '#dcc360',
-            'Cones_adult' : '#ffd429',
-            'Rods' : '#7d7d7d',
-            'HC' : '#FC7715',
-            'BC_larval' : '#ccf2ff',
-            'BC_adult' : '#663d00',
-            'AC_larval' : '#3DF591',
-            'ACgaba' : '#3DF5C3',
-            'ACgly' : '#56F53D',
-            'RGC_larval' : '#F53D59',
-            'RGC_adult' : '#BB0622',
-            'MGi' : '#EA9D81',
-            'MG1' : '#A2644E',
-            'MG2' : '#7E4835',
-            'MG3' : '#613728'
-        }
+        pC = {'RPC' : '#DADADA', 'PRPC' : '#dfdac8', 'Cones_larval' : '#dcc360', 'Cones_adult' : '#ffd429', 'Rods' : '#7d7d7d',
+              'HC' : '#FC7715', 'BC_larval' : '#ccf2ff', 'BC_adult' : '#663d00', 'AC_larval' : '#3DF591', 'ACgaba' : '#3DF5C3', 'ACgly' : '#56F53D',
+              'RGC_larval' : '#F53D59', 'RGC_adult' : '#BB0622', 'MGi' : '#EA9D81', 'MG1' : '#A2644E', 'MG2' : '#7E4835', 'MG3' : '#613728'}
     groupsColors = np.array([pC['RPC'],pC['PRPC'],pC['Cones_larval'],pC['Cones_adult'],pC['Rods'],
                              pC['HC'],pC['BC_larval'],pC['BC_adult'],pC['AC_larval'],pC['ACgaba'],pC['ACgly'],
                              pC['RGC_larval'],pC['RGC_adult'],pC['MGi'],pC['MG1'],pC['MG2'],pC['MG3'],])
     groupsLabels = np.array( ['RPC','PRPC','C$_{larval}$','C$_{adult}$','R$_{ods}$',
                               'HC','BC$_{larval}$','BC$_{adult}$','AC$_{larval}$','AC$_{GABA}$','AC$_{Gly}$',
                               'RGC$_{larval}$','RGC$_{adult}$','MGi','MG1','MG2','MG3'])
+    if not ax:
+        ax = plt.gca()
+    hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, groupRotation = 45, ax=ax, cbarlabel=cbarlabel)
+    return hmH, cbH
+
+def heatmap_Hoang2020_PhotoDev(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
+    """Main call for heatmap for reanalyzed data from Hoang et al. (2020)
+    Arguments:
+        heatmapData : pandas dataframe containing expression data to be plotted
+        pC : dict with custom photoreceptor colors
+        norm : boolean that determines if plotting is raw data or row-normalized
+    Returns:
+        hmH : heatmap handle
+        cbH : colorbar handle
+    """
+    genenames = heatmapData['symbol'].values
+    cbarlabel = "avg."
+    delta = 0
+    if pctPlot:
+        delta = 8
+        cbarlabel = "%"
+    data = heatmapData.iloc[0:,2+delta:9+delta].values #avg. counts or percent expression
+    if norm:
+        data = heatmapData.iloc[0:,2+delta:9+delta].apply(lambda x: x/x.max(), axis=1).values #normalized by max
+        cbarlabel = "norm. " + cbarlabel
+    groupsN = np.array([1,1,1,1,1,1,1])
+
+    if not pC:
+        pC = {
+            'RPC' : "#DADADA",
+            'PRP' : "#dfdac8",
+            'Cle' : '#dacd9a',
+            'Clm' : '#dcc360',
+            'Cll' : '#cca819',
+            'C' : '#ffd429',
+            'R' : '#7d7d7d',
+         }
+    groupsColors = np.array([
+        pC['RPC'],pC['PRP'],
+        pC['Cle'],pC['Clm'],pC['Cll'],
+        pC['C'],pC['R']
+    ])
+    groupsLabels = np.array(['RPC','PRP','Cone$_{larval-early}$','Cone$_{larval-mid}$','Cone$_{larval-late}$','Cone','Rod'])
+    if not ax:
+        ax = plt.gca()
+    hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, groupRotation = 45, ax=ax, cbarlabel=cbarlabel)
+    return hmH, cbH
+
+def heatmap_Hoang2020_PhotoDev_withcontaminatedlarvalrods(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
+    """Main call for heatmap for reanalyzed data from Hoang et al. (2020)
+    Arguments:
+        heatmapData : pandas dataframe containing expression data to be plotted
+        pC : dict with custom photoreceptor colors
+        norm : boolean that determines if plotting is raw data or row-normalized
+    Returns:
+        hmH : heatmap handle
+        cbH : colorbar handle
+    """
+    genenames = heatmapData['symbol'].values
+    cbarlabel = "avg."
+    delta = 0
+    if pctPlot:
+        delta = 9
+        cbarlabel = "%"
+    data = heatmapData.iloc[0:,2+delta:10+delta].values #avg. counts or percent expression
+    if norm:
+        data = heatmapData.iloc[0:,2+delta:10+delta].apply(lambda x: x/x.max(), axis=1).values #normalized by max
+        cbarlabel = "norm. " + cbarlabel
+    groupsN = np.array([1,1,1,1,1,1,1,1])
+
+    if not pC:
+        pC = {
+            'RPC' : "#DADADA",
+            'PRP' : "#dfdac8",
+            'Cle' : '#dacd9a',
+            'Clm' : '#dcc360',
+            'Cll' : '#cca819',
+            'C' : '#ffd429',
+            'Rll' : '#a3a3a3',
+            'R' : '#7d7d7d',
+         }
+    groupsColors = np.array([
+        pC['RPC'],pC['PRP'],
+        pC['Cle'],pC['Clm'],pC['Cll'],
+        pC['C'],
+        pC['Rll'],pC['R']
+    ])
+    groupsLabels = np.array(['RPC','PRPC','Cone$_{larval-early}$','Cone$_{larval-mid}$','Cone$_{larval-late}$','Cone','Rod$_{larval-late}$','Rod'])
     if not ax:
         ax = plt.gca()
     hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, groupRotation = 45, ax=ax, cbarlabel=cbarlabel)
