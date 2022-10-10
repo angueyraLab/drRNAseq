@@ -1,0 +1,25 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2022-10-10T17:17:39.748993Z",
+      "format": null,
+      "last_modified": "2022-10-10T17:16:20.140563Z",
+      "mimetype": null,
+      "name": "drAdultPhotoreceptors_toSeurat.R",
+      "path": "code/R_SeuratAnalysis/Angueyra2021_Photoreceptors/drAdultPhotoreceptors_toSeurat.R",
+      "size": 10000,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2022-10-10T17:17:39.748993Z",
+  "format": "json",
+  "last_modified": "2022-10-10T17:17:39.748993Z",
+  "mimetype": null,
+  "name": "Angueyra2021_Photoreceptors",
+  "path": "code/R_SeuratAnalysis/Angueyra2021_Photoreceptors",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
