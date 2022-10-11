@@ -380,10 +380,10 @@ def plotBars_Nerli2022(barData, geneSymbol, ax=None, pC=None):
         ax              : pyplot axis handle
         pC              : photoreceptor colors for plotting
     """
-    n = np.arange(1,6) # Retinal progenitors
-    n = np.append(n, 6 + np.arange(1,6)) # Photoreceptors
-    n = np.append(n, 11 + np.arange(1,6)) # Amacrine/Horizontal cells
-    n = np.append(n, 16 + np.arange(1,6)) # Retinal ganglion cells
+    n = np.arange(0,5) # Retinal progenitors
+    n = np.append(n, 4.5 + np.arange(1,6)) # Photoreceptors
+    n = np.append(n, 10 + np.arange(1,6)) # Amacrine/Horizontal cells
+    n = np.append(n, 15.5 + np.arange(1,6)) # Retinal ganglion cells
     h_start = 1
     h_end = 21
     h = barData.iloc[0,h_start:h_end].to_numpy()
