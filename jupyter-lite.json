@@ -21,7 +21,7 @@
       },
       {
         "liteExtension": false,
-        "load": "static/remoteEntry.b75c764d727b50009261.js",
+        "load": "static/remoteEntry.f6be43672b078c208aab.js",
         "mimeExtension": "./mimeExtension",
         "name": "@jupyterlab/geojson-extension",
         "style": "./style"
@@ -81,7 +81,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.826666d2e0fe36d6609e.js",
+        "load": "static/remoteEntry.a397b41514ddde5db0df.js",
         "name": "jupyter-leaflet"
       },
       {
@@ -107,7 +107,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.249e02ea9427f8cca2ad.js",
+        "load": "static/remoteEntry.8391480ec10f46a915ee.js",
         "mimeExtension": "./mimeExtension",
         "name": "jupyterlab-plotly"
       },
