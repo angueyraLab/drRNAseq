@@ -1,6 +1,6 @@
 # Zebrafish photoreceptor RNAseq explorer
 > This repository complements  
-> [Indentification of transcription factors involved in the specification of photoreceptor subtypes, Angueyra _et al._, 2021](https://www.biorxiv.org/content/10.1101/2021.11.26.470161v3)
+> [Transcription factors underlying photoreceptor diversity, Angueyra et al. eLife 2023;12:e81579](https://doi.org/10.7554/eLife.81579)
 
 ## Data availability
 All relevant data is openly available under "/data/"
@@ -30,5 +30,6 @@ You must use one these browsers
 1. Click [this link](https://angueyraLab.github.io/drRNAseq/lab/) to open the JupyterLite environment
 1. double-click on the "/content/" folder
 1. double-click on the "dr_photoPlotter_Adult.ipynb" notebook
+1. for developmental data through re-analysis of published datasets, double-click on the "dr_photoPlotter_Dev.ipynb" notebook
 
 ![Demo video](./demo.gif)
