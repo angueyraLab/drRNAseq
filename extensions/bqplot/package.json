@@ -1,6 +1,6 @@
 {
   "name": "bqplot",
-  "version": "0.5.37",
+  "version": "0.5.40",
   "description": "bqplot",
   "keywords": [
     "jupyter",
@@ -71,7 +71,7 @@
     "sinon": "^9.0.2",
     "sinon-chai": "^3.3.0",
     "style-loader": "^1.2.0",
-    "typescript": "^3.5.2",
+    "typescript": "~4.2.0",
     "webpack": "^5",
     "webpack-cli": "^3.3.12"
   },
@@ -98,7 +98,7 @@
       }
     },
     "_build": {
-      "load": "static/remoteEntry.99c828c2ee313756f7dc.js",
+      "load": "static/remoteEntry.abd2b115dfa81f0281e6.js",
       "extension": "./extension"
     }
   },

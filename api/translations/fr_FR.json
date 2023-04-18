@@ -133,6 +133,9 @@
       "Current memory usage": [
         "Utilisation actuelle de la m\u00e9moire"
       ],
+      "Detected IPyKernel version: %1": [
+        "Version de IPyKernel d\u00e9tect\u00e9e : %1"
+      ],
       "Free:": [
         "Libre\u00a0:"
       ],
@@ -163,8 +166,17 @@
       "Kernel usage details are not available": [
         "Les d\u00e9tails d'utilisation du noyau ne sont pas disponibles"
       ],
+      "Kernel usage is missing": [
+        "L'utilisation du noyau est manquante"
+      ],
       "Kernel usage is not available": [
         "L'utilisation du noyau n'est pas disponible"
+      ],
+      "Kernel usage not available": [
+        "Utilisation du noyau non disponible"
+      ],
+      "Loading\u2026": [
+        "Chargement\u2026"
       ],
       "Mem: %1 %2": [
         "M\u00e9m: %1 %2"
@@ -174,6 +186,12 @@
       ],
       "Memory:": [
         "M\u00e9moire :"
+      ],
+      "No IPyKernel installation detected.": [
+        "Aucune installation de IPyKernel d\u00e9tect\u00e9e."
+      ],
+      "No active kernel found.": [
+        "Aucun noyau actif trouv\u00e9."
       ],
       "Notebook:": [
         "Notebook :"
@@ -187,11 +205,23 @@
       "Process ID:": [
         "ID du processus :"
       ],
+      "Reason: %1.": [
+        "Raison\u00a0: %1."
+      ],
+      "Switch to a notebook or console to see kernel usage details.": [
+        "Basculez vers un notebook ou une console pour voir les d\u00e9tails d'utilisation du noyau."
+      ],
+      "Timed out in: %1 ms": [
+        "D\u00e9lai expir\u00e9 dans : %1 ms"
+      ],
       "Timestamp:": [
         "Date et heure :"
       ],
       "Total:": [
         "Total :"
+      ],
+      "Usage data is missing": [
+        "Les donn\u00e9es d'utilisation sont manquantes"
       ],
       "Used:": [
         "Utilis\u00e9 :"
@@ -265,6 +295,11 @@
       ],
       "%1 new messages, %2 log entries for %3": [
         "%1 nouveaux messages, %2 entr\u00e9es de journal pour %3"
+      ],
+      "%1 notification": [
+        "%1 notifications",
+        "%1 notification",
+        "%1 notifications"
       ],
       "A build is needed to include the latest changes": [
         "Une compilation est n\u00e9cessaire pour inclure les derniers changements"
@@ -574,6 +609,12 @@
       "Close and Shutdown Notebook": [
         "Fermer et arr\u00eater le notebook"
       ],
+      "Close and save": [
+        "Fermer et sauvegarder"
+      ],
+      "Close without saving": [
+        "Fermer sans sauvegarder"
+      ],
       "Code": [
         "Code"
       ],
@@ -612,6 +653,9 @@
       ],
       "Complete!": [
         "Termin\u00e9!"
+      ],
+      "Confirmation": [
+        "Confirmation"
       ],
       "Connected": [
         "Connect\u00e9"
@@ -790,11 +834,26 @@
       "Dismiss": [
         "Ignorer"
       ],
+      "Dismiss a notification": [
+        "Effacer une notification"
+      ],
+      "Dismiss all notifications": [
+        "Effacer toutes les notifications"
+      ],
+      "Dismiss notification": [
+        "Effacer la notification"
+      ],
       "Distributions": [
         "Distributions"
       ],
       "Distrust HTML": [
         "Se m\u00e9fier du HTML"
+      ],
+      "Do not ask me again.": [
+        "Ne plus demander."
+      ],
+      "Do not check for updates": [
+        "Ne pas v\u00e9rifier les mises \u00e0 jour"
       ],
       "Do you want to leave without saving?": [
         "Vous voulez quitter sans enregistrer ?"
@@ -804,9 +863,6 @@
       ],
       "Document is read-only": [
         "Le document est en lecture seule"
-      ],
-      "Don't ask me again.": [
-        "Ne plus me demander."
       ],
       "Download": [
         "T\u00e9l\u00e9charger"
@@ -842,6 +898,9 @@
         "Elapsed time: %1 seconds",
         "Temps \u00e9coul\u00e9 : %1 seconde",
         "Temps \u00e9coul\u00e9 : %1 secondes"
+      ],
+      "Emit a notification": [
+        "\u00c9mettre une notification"
       ],
       "Enable": [
         "Activer"
@@ -1061,8 +1120,17 @@
       "Help": [
         "Aide"
       ],
+      "Hide": [
+        "Masquer"
+      ],
       "Hide Selectors": [
         "Cacher les s\u00e9lecteurs"
+      ],
+      "Hide notification": [
+        "Masquer les notifications"
+      ],
+      "Hide notifications": [
+        "Masquer les notifications"
       ],
       "Hub": [
         "Hub"
@@ -1073,8 +1141,14 @@
       "Idle": [
         "Inactif"
       ],
+      "If checked, no confirmation to close a document will be asked in the future.": [
+        "Si coch\u00e9, aucune confirmation de fermeture d'un document ne sera demand\u00e9e dans le futur."
+      ],
       "If checked, you will not be asked to rename future untitled files when saving them.": [
         "Si coch\u00e9, il ne vous sera plus demand\u00e9 de renommer les fichiers sans titre lors de leur sauvegarde."
+      ],
+      "If pressed, you will not be prompted if a new JupyterLab version is found.": [
+        "En cas de clic, vous ne serez plus notifi\u00e9 si une nouvelle version de JupyterLab est disponible."
       ],
       "Ignore": [
         "Ignorer"
@@ -1084,6 +1158,9 @@
       ],
       "Image Viewer": [
         "Visionneuse d\u2019images"
+      ],
+      "In collaborative mode, the document is saved automatically after every change": [
+        "En mode collaboratif, le document est sauvegard\u00e9 automatiquement apr\u00e8s chaque modification"
       ],
       "Increase Code Font Size": [
         "Augmenter la taille de police du code"
@@ -1361,6 +1438,9 @@
       "Neither theme %1 nor default %2 loaded.": [
         "Ni le th\u00e8me %1 ni le th\u00e8me par d\u00e9faut %2 n'ont \u00e9t\u00e9 charg\u00e9s."
       ],
+      "Never show this notification again.": [
+        "Ne plus afficher cette notification."
+      ],
       "New Console": [
         "Nouvelle console"
       ],
@@ -1409,6 +1489,9 @@
       "Next": [
         "Suivant"
       ],
+      "No": [
+        "Non"
+      ],
       "No Kernel": [
         "Aucun noyau"
       ],
@@ -1450,6 +1533,9 @@
       ],
       "No log messages.": [
         "Aucun message de journal."
+      ],
+      "No notifications": [
+        "Pas de notifications"
       ],
       "No properties to inspect.": [
         "Aucune propri\u00e9t\u00e9 \u00e0 inspecter."
@@ -1496,11 +1582,20 @@
       "Notes": [
         "Notes"
       ],
+      "Notification is described by {id: string, message: string, type?: string, options?: {autoClose?: number | false, actions: {label: string, commandId: string, args?: ReadOnlyJSONObject, caption?: string, className?: string}[], data?: ReadOnlyJSONValue}}.": [
+        "Une notification est d\u00e9crite par {message: string, type?: string, options?: {autoClose?: number | false, actions: {label: string, commandId: string, args? ReadOnlyJSONObject, caption?: string, className?: string}[], data?: ReadOnlyJSONValue}}."
+      ],
+      "Notification is described by {message: string, type?: string, options?: {autoClose?: number | false, actions: {label: string, commandId: string, args?: ReadOnlyJSONObject, caption?: string, className?: string}[], data?: ReadOnlyJSONValue}}.": [
+        "Une notification est d\u00e9crite par {message: string, type?: string, options?: {autoClose?: number | false, actions: {label: string, commandId: string, args? ReadOnlyJSONObject, caption?: string, className?: string}[], data?: ReadOnlyJSONValue}}."
+      ],
       "OK": [
         "OK"
       ],
       "Ok": [
         "Ok"
+      ],
+      "Online Collaborators": [
+        "Collaborateurs en ligne"
       ],
       "Open": [
         "Ouvrir"
@@ -1568,6 +1663,9 @@
       "Open in the Main Area": [
         "Ouvrir dans la zone principale"
       ],
+      "Open privacy policy": [
+        "Ouvrir la politique de confidentialit\u00e9"
+      ],
       "Open the Hub control panel in a new browser tab": [
         "Ouvrez le panneau de configuration du Hub dans un nouvel onglet du navigateur"
       ],
@@ -1619,17 +1717,29 @@
       "Path: %1\nKernel: %2": [
         "Chemin : %1\nNoyau: %2"
       ],
+      "Pause": [
+        "Suspendre"
+      ],
+      "Please confirm you want to close \"%1\".": [
+        "Veuillez confirmer que vous voulez fermer \"%1\"."
+      ],
       "Please confirm you want to shut down JupyterLab.": [
         "Veuillez confirmer que vous voulez arr\u00eater JupyterLab."
       ],
       "Please open your browser JavaScript console for bug report instructions": [
         "Veuillez ouvrir la console JavaScript de votre navigateur pour les instructions de rapport de bogue"
       ],
+      "Please read the privacy policy.": [
+        "Veuillez lire la politique de confidentialit\u00e9."
+      ],
       "Presentation Mode": [
         "Mode Pr\u00e9sentation"
       ],
       "Print\u2026": [
         "Imprimer\u2026"
+      ],
+      "Privacy policies": [
+        "Politiques de confidentialit\u00e9"
       ],
       "Property Inspector": [
         "Inspecteur de propri\u00e9t\u00e9s"
@@ -1910,7 +2020,7 @@
       "Run Selected Cells": [
         "Ex\u00e9cuter les cellules s\u00e9lectionn\u00e9es"
       ],
-      "Run Selected Cells and Don't Advance": [
+      "Run Selected Cells and Do not Advance": [
         "Ex\u00e9cuter les cellules s\u00e9lectionn\u00e9es et ne pas avancer"
       ],
       "Run Selected Cells and Insert Below": [
@@ -2075,6 +2185,9 @@
       "Server unavailable or unreachable": [
         "Serveur indisponible ou inaccessible"
       ],
+      "Session expired": [
+        "Session expir\u00e9e"
+      ],
       "Set Log Level to %1": [
         "D\u00e9finir le niveau du journal \u00e0 %1"
       ],
@@ -2128,6 +2241,9 @@
       ],
       "Show Markdown Preview": [
         "Afficher l'aper\u00e7u du Markdown"
+      ],
+      "Show Notifications": [
+        "Afficher les notifications"
       ],
       "Show Right Sidebar": [
         "Afficher la barre lat\u00e9rale droite"
@@ -2299,14 +2415,17 @@
       "Thanks for trying out JupyterLab's extension manager.\nThe JupyterLab development team is excited to have a robust\nthird-party extension community.\nHowever, we cannot vouch for every extension,\nand some may introduce security risks.\nDo you want to continue?": [
         "Merci d'avoir essay\u00e9 le gestionnaire d'extension de JupyterLab.\nL'\u00e9quipe de d\u00e9veloppement de JupyterLab est heureuse d'avoir une communaut\u00e9 d'extension \nrobuste.\nCependant, nous ne pouvons pas nous porter garant pour chaque extension,\net certains peuvent introduire des risques de s\u00e9curit\u00e9.\nVoulez-vous continuer ?"
       ],
-      "The JupyterLab development team is excited to have a robust\nthird-party extension community. However, we do not review\nthird-party extensions, and some extensions may introduce security\nrisks or contain malicious code that runs on your machine.": [
-        "L'\u00e9quipe de d\u00e9veloppement de JupyterLab est heureuse d'avoir une communaut\u00e9 d'extension\ntiers robuste. Cependant, nous ne r\u00e9visons pas les extensions\ntierces, et certaines extensions peuvent introduire des risques de s\u00e9curit\u00e9\nou contenir du code malveillant qui s'ex\u00e9cute sur votre machine."
+      "The JupyterLab development team is excited to have a robust\nthird-party extension community. However, we do not review\nthird-party extensions, and some extensions may introduce security\nrisks or contain malicious code that runs on your machine. Moreover in order\nto work, this panel needs to fetch data from web services.": [
+        "L'\u00e9quipe de d\u00e9veloppement de JupyterLab est heureuse d'avoir une communaut\u00e9 d'extension\ntiers robuste. Cependant, nous ne r\u00e9visons pas les extensions\ntierces, et certaines extensions peuvent introduire des risques de s\u00e9curit\u00e9\nou contenir du code malveillant qui s'ex\u00e9cute sur votre machine. De plus ce panneau doit r\u00e9cup\u00e9rer des donn\u00e9es sur des services web pour fonctionner."
       ],
       "The cell has not been executed to avoid kernel deadlock as there is another pending input! Submit your pending input and try again.": [
         "La cellule n'a pas \u00e9t\u00e9 ex\u00e9cut\u00e9e pour \u00e9viter de bloquer le noyau car une autre entr\u00e9e est en attente ! Soumettez une entr\u00e9e et r\u00e9essayez."
       ],
       "The checkpoint was last updated at: ": [
         "Le point de contr\u00f4le a \u00e9t\u00e9 mis \u00e0 jour pour la derni\u00e8re fois \u00e0: "
+      ],
+      "The document session expired. You need to reload this browser tab.": [
+        "La session du document a expir\u00e9. Vous devez recharger cet onglet du navigateur."
       ],
       "The extension manager is disabled. Please contact your system\nadministrator to verify the listings configuration.": [
         "Le gestionnaire d'extension est d\u00e9sactiv\u00e9. Veuillez contacter l'administrateur de votre syst\u00e8me\npour v\u00e9rifier la configuration des listes."
@@ -2431,6 +2550,9 @@
       "Update": [
         "Mettre \u00e0 jour"
       ],
+      "Update a notification": [
+        "Mise \u00e0 jour d'une notification"
+      ],
       "Updating extensions list": [
         "Mise \u00e0 jour de la liste d'extensions"
       ],
@@ -2461,6 +2583,12 @@
       "User Preferences": [
         "Pr\u00e9f\u00e9rences de l'utilisateur"
       ],
+      "User info": [
+        "Informations utilisateur"
+      ],
+      "User information": [
+        "Informations de l'utilisateur"
+      ],
       "Variables": [
         "Variables"
       ],
@@ -2488,11 +2616,17 @@
       "Workspace loader": [
         "Chargeur d'espace de travail"
       ],
+      "Would you like to receive official Jupyter news?\nPlease read the privacy policy.": [
+        "Voulez-vous recevoir les actualit\u00e9s officielles de Jupyter ?\nVeuillez lire la politique de confidentialit\u00e9."
+      ],
       "Wrap Words": [
         "Retour \u00e0 la ligne"
       ],
       "YAML File": [
         "Fichier YAML"
+      ],
+      "Yes": [
+        "Oui"
       ],
       "You have shut down the Jupyter server. You can now close this tab.": [
         "Vous avez arr\u00eat\u00e9 le serveur Jupyter. Vous pouvez maintenant fermer cet onglet."
@@ -2746,6 +2880,12 @@
       "schema\u0004File editor tooltip settings.": [
         "Param\u00e8tres d'info-bulle de l'\u00e9diteur de fichiers."
       ],
+      "schema\u0004HTML Sanitizer": [
+        "Assainisseur HTML"
+      ],
+      "schema\u0004HTML Sanitizer settings.": [
+        "Param\u00e8tres d'assainissement HTML."
+      ],
       "schema\u0004HTML Viewer": [
         "Visionneuse HTML"
       ],
@@ -2857,6 +2997,12 @@
       "schema\u0004Notebook tooltip settings.": [
         "Param\u00e8tres d'info-bulle du notebook."
       ],
+      "schema\u0004Notifications": [
+        "Notifications"
+      ],
+      "schema\u0004Notifications settings.": [
+        "Param\u00e8tres des notifications."
+      ],
       "schema\u0004Print": [
         "Imprimer"
       ],
@@ -2935,6 +3081,9 @@
       "settings\u0004Add accessibility elements for use with screen readers.": [
         "Ajouter des \u00e9l\u00e9ments d'accessibilit\u00e9 \u00e0 utiliser avec les lecteurs d'\u00e9cran."
       ],
+      "settings\u0004Allowed URL Scheme": [
+        "Sch\u00e9ma d'URL autoris\u00e9"
+      ],
       "settings\u0004An item is defined by a 'name', a 'command' name, and an 'icon' name": [
         "Un \u00e9l\u00e9ment est d\u00e9fini par un nom `name`, une commande `command` et un nom d'ic\u00f4ne `icon`"
       ],
@@ -2943,6 +3092,9 @@
       ],
       "settings\u0004Application-level visual styling theme": [
         "Th\u00e8me de style visuel au niveau de l'application"
+      ],
+      "settings\u0004Ask for confirmation to close a document": [
+        "Demander une confirmation pour fermer un document"
       ],
       "settings\u0004Auto Closing Brackets": [
         "Fermeture automatique des parenth\u00e8ses"
@@ -2962,8 +3114,14 @@
       "settings\u0004CSS file defining the corresponding\n.cm-s-[name] styles is loaded": [
         "Le fichier CSS d\u00e9finissant les styles\n.cm-s-[name] correspondants est charg\u00e9"
       ],
+      "settings\u0004CSV Viewer": [
+        "Visionneuse CSV"
+      ],
       "settings\u0004CSV viewer toolbar items": [
         "\u00c9l\u00e9ments de la barre d'outils de la visionneuse CSV"
+      ],
+      "settings\u0004Check for JupyterLab updates": [
+        "V\u00e9rifier les mises \u00e0 jour de JupyterLab"
       ],
       "settings\u0004Close on exit": [
         "Fermer \u00e0 la sortie"
@@ -2985,6 +3143,9 @@
       ],
       "settings\u0004Collapse the debugger sidebar when disabling the debugger on a document.": [
         "R\u00e9duire la barre lat\u00e9rale du d\u00e9bogueur lorsque le d\u00e9bogueur est d\u00e9sactiv\u00e9 sur un document."
+      ],
+      "settings\u0004Command Palette": [
+        "Palette de commandes"
       ],
       "settings\u0004Command arguments": [
         "Arguments de la commande"
@@ -3055,14 +3216,17 @@
       "settings\u0004Document Manager": [
         "Gestionnaire de documents"
       ],
+      "settings\u0004Document Search": [
+        "Chercher dans un document"
+      ],
       "settings\u0004Editor": [
         "\u00c9diteur"
       ],
       "settings\u0004Editor Configuration": [
         "Configuration de l'\u00e9diteur"
       ],
-      "settings\u0004Enable CDN": [
-        "Activer CDN"
+      "settings\u0004Enable Content Delivery Network (CDN)": [
+        "Activer un r\u00e9seau de distribution de contenu (CDN)"
       ],
       "settings\u0004Enable h1 numbering": [
         "Activer la num\u00e9rotation h1"
@@ -3079,14 +3243,17 @@
       "settings\u0004Enables extension manager (requires Node.js/npm).\nWARNING: installing untrusted extensions may be unsafe.": [
         "Active le gestionnaire d'extension (n\u00e9cessite Node.js/npm).\nATTENTION : installer des extensions non fiables peut \u00eatre dangereux."
       ],
-      "settings\u0004Enables using the CDN to fetch full package data.  Otherwise, the configured NPM registry will be used. Due to a lack of CORS support by NPM registry, only disable if supplying a custom registry": [
-        "Active l'utilisation du CDN pour r\u00e9cup\u00e9rer les donn\u00e9es compl\u00e8tes du paquet. Sinon, le registre NPM configur\u00e9 sera utilis\u00e9. En raison d'un manque de support de CORS par le registre NPM, d\u00e9sactiver uniquement si vous fournissez un registre personnalis\u00e9"
+      "settings\u0004Enables using the Content Delivery Network (CDN) to fetch full package data.  Otherwise, the configured NPM registry will be used. Due to a lack of CORS support by NPM registry, only disable if supplying a custom registry": [
+        "Active l'utilisation du r\u00e9seau de distribution de contenu (CDN) pour r\u00e9cup\u00e9rer les donn\u00e9es compl\u00e8tes du package. Sinon, le registre NPM configur\u00e9 sera utilis\u00e9. En raison d'un manque de support de CORS par le registre NPM, d\u00e9sactiver uniquement si vous fournissez un registre personnalis\u00e9"
       ],
       "settings\u0004Experimental settings to enable the undo/redo on the notebook document level.": [
         "Param\u00e8tre exp\u00e9rimental pour annuler/rejouer les changements au niveau du notebook complet."
       ],
       "settings\u0004Extension Manager": [
         "Gestionnaire d'extensions"
+      ],
+      "settings\u0004Fetch official Jupyter news": [
+        "R\u00e9cup\u00e9rer les actualit\u00e9s officielles de Jupyter"
       ],
       "settings\u0004File Browser": [
         "Explorateur de fichiers"
@@ -3118,6 +3285,9 @@
       "settings\u0004Global setting to define the rendering layout in notebooks. 'default' or 'side-by-side' are supported.": [
         "Param\u00e8tre global pour d\u00e9finir la disposition de rendu dans les blocs-notes. 'default' (par d\u00e9faut) ou 'side-by-side' (c\u00f4te \u00e0 c\u00f4te) sont pris en charge."
       ],
+      "settings\u0004HTML Viewer": [
+        "Visionneuse HTML"
+      ],
       "settings\u0004HTML viewer toolbar items": [
         "\u00c9l\u00e9ments de la barre d'outils de la visionneuse HTML"
       ],
@@ -3132,6 +3302,9 @@
       ],
       "settings\u0004Highlight active line. Value is boolean, or { nonEmpty: boolean }.": [
         "Surligner la ligne active. La valeur est un bool\u00e9en, ou '{ nonEmpty: boolean }'."
+      ],
+      "settings\u0004If `true`, no toast notifications will be automatically displayed.": [
+        "Si `true`, aucun pop-up ne sera affich\u00e9e pour les notifications."
       ],
       "settings\u0004If `true`, the kernel status progression will be displayed in the status bar otherwise it will be in the toolbar.": [
         "Si `true`, la progression de l'\u00e9tat du noyau sera affich\u00e9e dans la barre d'\u00e9tat, sinon elle sera dans la barre d'outils."
@@ -3253,8 +3426,8 @@
       "settings\u0004Modal Command Palette": [
         "Palette de commandes modale"
       ],
-      "settings\u0004NPM CDN": [
-        "CDN NPM"
+      "settings\u0004NPM Content Delivery Network (CDN)": [
+        "R\u00e9seau de distribution de contenu NPM (CDN)"
       ],
       "settings\u0004NPM Registry": [
         "Registre NPM"
@@ -3349,6 +3522,9 @@
       "settings\u0004Rulers": [
         "R\u00e8gles"
       ],
+      "settings\u0004Scheme allowed by the HTML sanitizer.": [
+        "Sch\u00e9ma autoris\u00e9 lors de l'assainissement HTML."
+      ],
       "settings\u0004Screen Reader Mode": [
         "Mode lecture d'\u00e9cran"
       ],
@@ -3373,8 +3549,8 @@
       "settings\u0004Selection Pointer": [
         "Pointeur de s\u00e9lection"
       ],
-      "settings\u0004Set the interface display language. Examples: 'es_CO', 'fr'.": [
-        "D\u00e9finit la langue d'affichage de l'interface. Exemples: 'es_CO', 'fr'."
+      "settings\u0004Set the interface display language. Examples: 'es_CO', 'fr_FR'. Set 'default' to use the server default locale. Requires corresponding language pack to be installed.": [
+        "D\u00e9finit la langue d'affichage de l'interface. Exemples: 'es_CO', 'fr_FR'. D\u00e9finissez 'default' pour utiliser la langue par d\u00e9faut du serveur. N\u00e9cessite l'installation du pack de langue correspondant."
       ],
       "settings\u0004Set the type of editor to use while editing your settings.": [
         "D\u00e9finissez le type d'\u00e9diteur \u00e0 utiliser lors de l'\u00e9dition de vos param\u00e8tres."
@@ -3436,6 +3612,9 @@
       "settings\u0004Sidebar": [
         "Barre lat\u00e9rale"
       ],
+      "settings\u0004Silence all notifications": [
+        "Notifications silencieuses"
+      ],
       "settings\u0004Start mode: ``, `single`or `multiple`": [
         "Mode d'affichage: ``, `single` (document unique) ou `multiple` (multi documents)"
       ],
@@ -3460,6 +3639,9 @@
       "settings\u0004Synchronize collapse state": [
         "Synchroniser l'\u00e9tat r\u00e9duit"
       ],
+      "settings\u0004TSV Viewer": [
+        "Visionneuse TSV"
+      ],
       "settings\u0004TSV viewer toolbar items": [
         "\u00c9l\u00e9ments de la barre d'outils de la visionneuse TSV"
       ],
@@ -3478,8 +3660,8 @@
       "settings\u0004The CSS selector for the context menu item.": [
         "Le s\u00e9lecteur CSS pour l'\u00e9l\u00e9ment du menu contextuel."
       ],
-      "settings\u0004The URI of the CDN to use for fetching full package data": [
-        "L'URI du CDN \u00e0 utiliser pour r\u00e9cup\u00e9rer toutes les donn\u00e9es du paquet"
+      "settings\u0004The URI of the Content Delivery Network (CDN) to use for fetching full package data": [
+        "L'URI du r\u00e9seau de distribution de contenu (CDN) \u00e0 utiliser pour r\u00e9cup\u00e9rer toutes les donn\u00e9es du paquet"
       ],
       "settings\u0004The URI of the NPM registry to use for searching for jupyterlab extensions": [
         "L'URI du registre NPM \u00e0 utiliser pour la recherche d'extensions JupyterLab"
@@ -3535,8 +3717,8 @@
       "settings\u0004The maximum number of output cells to be rendered in the output area.": [
         "Le nombre maximum de r\u00e9sultats \u00e0 afficher dans la zone de sortie d'une cellule."
       ],
-      "settings\u0004The method for hiding widgets in the main dock panel. Using `scale` will increase performance on Firefox but don't use it with Chrome, Chromium or Edge.": [
-        "La m\u00e9thode pour masquer les widgets dans le panneau principal. L'option `scale` augmentera les performances sur Firefox, mais ne doit pas \u00eatre utilis\u00e9e avec Chrome, Chromium ou Edge."
+      "settings\u0004The method for hiding widgets in the main dock panel. Using `scale` will increase performance on Firefox but don't use it with Chrome, Chromium or Edge. Similar performance gains are seen with `contentVisibility` which is only available in Chromium-based browsers.": [
+        "La m\u00e9thode pour masquer les widgets dans le panneau principal du dock. L'utilisation de `scale` augmentera les performances sur Firefox, mais est incompatible avec Chrome, Chromium ou Edge. Pour ces navigateurs utilis\u00e9s plut\u00f4t `contentVisibility`; non compatible avec Firefox ou Safari."
       ],
       "settings\u0004The mode under which JupyterLab should start. If empty, the mode will be imposed by the URL": [
         "Le mode d'affichage de JupyterLab au d\u00e9marrage. Si vide, le mode sera impos\u00e9 par l'URL"
@@ -3601,14 +3783,17 @@
       "settings\u0004Whether the menu is disabled or not": [
         "Si le menu est d\u00e9sactiv\u00e9 ou non"
       ],
-      "settings\u0004Whether the user understand that extensions managed through this interface run arbitrary code that may be dangerous": [
-        "Si l'utilisateur comprend ou non que les extensions g\u00e9r\u00e9es par cette interface ex\u00e9cutent du code arbitraire qui peut \u00eatre dangereux"
+      "settings\u0004Whether the user agrees the access to external web services and understands extensions may introduce security risks or contain malicious code that runs on his machine.": [
+        "L'utilisateur accepte-t-il l'acc\u00e8s \u00e0 des services web externes et comprend-il que les extensions peuvent introduire des risques de s\u00e9curit\u00e9 ou contenir du code malveillant qui s'ex\u00e9cute sur sa machine?"
       ],
       "settings\u0004Whether to apply fuzzy algorithm while filtering on file names": [
         "Appliquer ou non un algorithme flou lors du filtrage sur les noms de fichiers"
       ],
       "settings\u0004Whether to apply the search on directories": [
         "Appliquer ou non la recherche sur les r\u00e9pertoires"
+      ],
+      "settings\u0004Whether to ask for confirmation to close a document or not.": [
+        "Demander une confirmation pour fermer un document ou non."
       ],
       "settings\u0004Whether to automatically navigate to a document's current directory": [
         "Si vous souhaitez naviguer automatiquement vers le r\u00e9pertoire courant d'un document"
@@ -3618,6 +3803,12 @@
       ],
       "settings\u0004Whether to be able to scroll so the last cell is at the top of the panel": [
         "Si l'on peut faire d\u00e9filer la derni\u00e8re cellule en haut du panneau"
+      ],
+      "settings\u0004Whether to check for newer version of JupyterLab or not. It requires `fechNews` to be `true` to be active. If `true`, it will make a request to a website.": [
+        "V\u00e9rifier si une nouvelle version de JupyterLab est disponible ou non. Il faut que `fechNews` soit `true` pour \u00eatre actif. Si `true`, une requ\u00eate \u00e0 un site web sera envoy\u00e9e."
+      ],
+      "settings\u0004Whether to fetch news from Jupyter news feed. If `true`, it will make a request to a website.": [
+        "R\u00e9cup\u00e9rer les actualit\u00e9s depuis le fil de nouvelles Jupyter. Si `true`, une requ\u00eate \u00e0 un site web sera envoy\u00e9e."
       ],
       "settings\u0004Whether to flash on new log message or not": [
         "S'il faut flasher ou non pour un nouveau message de journal"
@@ -3700,8 +3891,8 @@
       "waiting for fonts": [
         "en attente de polices"
       ],
-      "\u00a9 2015-2022 Project Jupyter Contributors": [
-        "\u00a9 2015-2022 Contributeurs du projet Jupyter"
+      "\u00a9 2015-2023 Project Jupyter Contributors": [
+        "\u00a9 2015-2023 Contributeurs du projet Jupyter"
       ]
     },
     "jupyterlab_git": {
@@ -4933,14 +5124,23 @@
       "Cell": [
         "Cellule"
       ],
+      "Choose the jump target": [
+        "Choisir la destination"
+      ],
       "Code": [
         "Code"
+      ],
+      "Connection not found for jump": [
+        "Connexion introuvable pour de d\u00e9placement"
       ],
       "Copy diagnostics' message": [
         "Copier le message de diagnostics"
       ],
       "Could not rename %1 - consult the language server documentation": [
         "Impossible de renommer %1 - consulter la documentation du serveur de language"
+      ],
+      "Default values set programatically for: ": [
+        "Valeurs par d\u00e9faut d\u00e9finies par programme : "
       ],
       "Diagnostics Panel": [
         "Panneau des diagnostics"
@@ -5007,6 +5207,9 @@
       "Installation": [
         "Installation"
       ],
+      "Jump": [
+        "Allez \u00e0"
+      ],
       "Jump back": [
         "Retour en arri\u00e8re"
       ],
@@ -5015,6 +5218,9 @@
       ],
       "Jump to location": [
         "Aller \u00e0 l'emplacement"
+      ],
+      "Jump to references": [
+        "Aller aux r\u00e9f\u00e9rences"
       ],
       "LSP Code Intelligence": [
         "Suggestion de code LSP"
@@ -5034,6 +5240,12 @@
       "Language Servers": [
         "Serveurs de langage"
       ],
+      "Language server protocol": [
+        "Protocole du serveur de langues"
+      ],
+      "Language servers": [
+        "Serveurs de langue"
+      ],
       "Licence: ": [
         "Licence : "
       ],
@@ -5049,6 +5261,9 @@
       "Missing": [
         "Manquant"
       ],
+      "Multiple distinct values detected for:": [
+        "Plusieurs valeurs distinctes d\u00e9tect\u00e9es :"
+      ],
       "No installation instructions were provided with this specification.": [
         "Aucune instruction d'installation n'a \u00e9t\u00e9 fournie avec cette sp\u00e9cification."
       ],
@@ -5060,6 +5275,9 @@
       ],
       "No language server for %1 detected": [
         "Aucun serveur de langage pour %1 d\u00e9tect\u00e9"
+      ],
+      "Not installed": [
+        "Non install\u00e9"
       ],
       "OK": [
         "OK"
@@ -5095,6 +5313,9 @@
       "Renaming %1 to %2...": [
         "Renommage de %1 vers %2..."
       ],
+      "Retaining the last value for each of the settings. Please remove the additional values in JSON Settings Editor.": [
+        "Conserver la derni\u00e8re valeur pour chacun des param\u00e8tres. Veuillez supprimer les valeurs suppl\u00e9mentaires dans l'\u00e9diteur de param\u00e8tres JSON."
+      ],
       "Running": [
         "Actifs"
       ],
@@ -5127,6 +5348,9 @@
       "Troubleshooting": [
         "R\u00e9solution de bugs"
       ],
+      "Validation of user settings for language server failed": [
+        "\u00c9chec de la validation des param\u00e8tres de l'utilisateur pour le serveur de langue"
+      ],
       "Virtual Document": [
         "Document virtuel"
       ],
@@ -5145,6 +5369,9 @@
       "Your browser protects clipboard from write operations; please copy the message manually": [
         "Votre navigateur prot\u00e8ge le presse-papiers contre les op\u00e9rations d'\u00e9criture; veuillez copier le message manuellement"
       ],
+      "Your language server settings do not follow current schema. The LSP configuration graphical interface will run in schema-free mode to enable you to continue using the current settings as-is (in case if the schema is outdated). If this is however an earlier configuration mistake (settings were not validated in earlier versions of jupyterlab-lsp), please correct the following validation errors in JSON Settings Editor, save, and reload application:": [
+        "Les param\u00e8tres de votre serveur de langue ne suivent pas le sch\u00e9ma actuel. L'interface graphique de configuration LSP s'ex\u00e9cute en mode sans sch\u00e9ma pour vous permettre de continuer \u00e0 utiliser les param\u00e8tres actuels tels quels (dans le cas o\u00f9 le sch\u00e9ma n'est plus \u00e0 jour). Si toutefois c'est une erreur de configuration ant\u00e9rieure (les param\u00e8tres n'ont pas \u00e9t\u00e9 valid\u00e9s dans les versions pr\u00e9c\u00e9dentes de jupyterlab-lsp), veuillez corriger les erreurs de validation suivantes dans l'\u00e9diteur de param\u00e8tres JSON, sauvegarder, et recharger l'application :"
+      ],
       "a dict of language server specs, keyed by implementation": [
         "un dictionnaire de sp\u00e9cifications de serveur de langue, cl\u00e9 par impl\u00e9mentation"
       ],
@@ -5153,6 +5380,9 @@
       ],
       "additional absolute paths to seek node_modules first": [
         "chemins absolus suppl\u00e9mentaires pour rechercher node_modules en premier"
+      ],
+      "allowed values: %1": [
+        "valeurs autoris\u00e9es : %1"
       ],
       "cell %1": [
         "cellule %1"
@@ -5245,6 +5475,12 @@
       "settings\u0004Ask servers to send trace notifications": [
         "Demander aux serveurs d'envoyer des notifications de tra\u00e7age"
       ],
+      "settings\u0004Automatic activation of hover without pressing a key. It will still be possible to show up tooltips with the modifier key.": [
+        "Activation automatique du survol sans appuyer sur une touche. Il sera toujours possible d'afficher les info-bulles avec la touche de modificateur."
+      ],
+      "settings\u0004Automatic hover": [
+        "Survol automatique"
+      ],
       "settings\u0004Cache size": [
         "Taille du cache"
       ],
@@ -5292,6 +5528,9 @@
       ],
       "settings\u0004Disable this feature. Requires reloading JupyterLab to apply changes.": [
         "D\u00e9sactiver cette fonctionnalit\u00e9. N\u00e9cessite de recharger JupyterLab pour appliquer les modifications."
+      ],
+      "settings\u0004Hover delay": [
+        "D\u00e9lai de survol"
       ],
       "settings\u0004If a code editor includes a code fragment in another language (for example a %%markdown magic in IPython) with appropriate foreign code extractor defined, and the extend of this code (coverage of the editor) passes the threshold, the syntax highlighting (i.e. the mode) will change to provide highlighting for the language of the foreign code.": [
         "Si un \u00e9diteur de code inclut un fragment de code dans un autre langage (par exemple une magie %%markdown dans IPython) avec un extracteur de code \u00e9tranger appropri\u00e9 d\u00e9fini, et l'extension de ce code (couverture de l'\u00e9diteur) passe le seuil, la coloration syntaxique (par exemple, le mode) va changer pour fournir la mise en \u00e9vidence de la langue du code \u00e9tranger."
@@ -5346,6 +5585,9 @@
       ],
       "settings\u0004Number of lines to show without collapsing": [
         "Nombre de lignes \u00e0 afficher sans regroupement"
+      ],
+      "settings\u0004Number of milliseconds after which the hover tooltip should be shown. Ignored if 'Automatic hover' is off.": [
+        "Nombre de millisecondes avant d'afficher l'info-bulle de survol. Ignor\u00e9e si 'Automatique' est \u00e9teint."
       ],
       "settings\u0004Number of milliseconds to delay sending out the highlights request to the language server; you can get better responsiveness adjusting this value, but setting it to zero can actually slow it down as the server might get overwhelmed when moving the cursor.": [
         "Nombre de millisecondes pour retarder l'envoi de la requ\u00eate de surlignage au serveur de language ; vous pouvez obtenir une meilleure r\u00e9activit\u00e9 en ajustant cette valeur, mais le mettre \u00e0 z\u00e9ro peut en fait le ralentir car le serveur pourrait \u00eatre d\u00e9pass\u00e9 lors du d\u00e9placement du curseur."
