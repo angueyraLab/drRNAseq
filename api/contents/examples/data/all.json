@@ -2,9 +2,9 @@
   "content": [
     {
       "content": null,
-      "created": "2023-04-18T15:30:52.729408Z",
+      "created": "2023-04-25T16:23:27.597254Z",
       "format": null,
-      "last_modified": "2023-04-18T15:29:47.291881Z",
+      "last_modified": "2023-04-25T16:22:21.632319Z",
       "mimetype": "text/csv",
       "name": "iris.csv",
       "path": "examples/data/iris.csv",
@@ -14,9 +14,9 @@
     },
     {
       "content": null,
-      "created": "2023-04-18T15:30:52.729408Z",
+      "created": "2023-04-25T16:23:27.597254Z",
       "format": null,
-      "last_modified": "2023-04-18T15:29:47.291881Z",
+      "last_modified": "2023-04-25T16:22:21.632319Z",
       "mimetype": "image/png",
       "name": "matplotlib.png",
       "path": "examples/data/matplotlib.png",
@@ -26,9 +26,9 @@
     },
     {
       "content": null,
-      "created": "2023-04-18T15:30:52.729408Z",
+      "created": "2023-04-25T16:23:27.597254Z",
       "format": null,
-      "last_modified": "2023-04-18T15:29:47.291881Z",
+      "last_modified": "2023-04-25T16:22:21.628319Z",
       "mimetype": "application/geo+json",
       "name": "Museums_in_DC.geojson",
       "path": "examples/data/Museums_in_DC.geojson",
@@ -38,9 +38,9 @@
     },
     {
       "content": null,
-      "created": "2023-04-18T15:30:52.729408Z",
+      "created": "2023-04-25T16:23:27.597254Z",
       "format": null,
-      "last_modified": "2023-04-18T15:29:47.291881Z",
+      "last_modified": "2023-04-25T16:22:21.628319Z",
       "mimetype": null,
       "name": "fasta-example.fasta",
       "path": "examples/data/fasta-example.fasta",
@@ -50,9 +50,9 @@
     },
     {
       "content": null,
-      "created": "2023-04-18T15:30:52.729408Z",
+      "created": "2023-04-25T16:23:27.597254Z",
       "format": null,
-      "last_modified": "2023-04-18T15:29:47.291881Z",
+      "last_modified": "2023-04-25T16:22:21.628319Z",
       "mimetype": "application/json",
       "name": "bar.vl.json",
       "path": "examples/data/bar.vl.json",
@@ -61,9 +61,9 @@
       "writable": true
     }
   ],
-  "created": "2023-04-18T15:30:52.729408Z",
+  "created": "2023-04-25T16:23:27.597254Z",
   "format": "json",
-  "last_modified": "2023-04-18T15:30:52.729408Z",
+  "last_modified": "2023-04-25T16:23:27.597254Z",
   "mimetype": null,
   "name": "data",
   "path": "examples/data",
