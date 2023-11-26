@@ -2,28 +2,32 @@
 """juanPlot
 
     Collection of plotting and formatting functions for Angueyra et al., 2022
-    Created: September 2021
-    Updated: October 2022
+    Created: September 2021 (Angueyra)
+    Updated: October 2022 (Angueyra)
+        - Added plotting routines for _Dev notebook
+    Updated: November 2024 (Angueyra)
+        - Added plotting routines for Yoshimatsu et al, acute zone data and notebook
         To build wheel:
-        create directory "juanPlot"
         copy .py function as "__init__.py"
-        create "test.py"
+        create directory "juanPlot"
+        create "test.py" inside "juanPlot"
             from juanPlot.__init__ import *
 
             def func_test():
                 print("Successfully Imported test.py file")
-        create "setup.py"
+        create "setup.py" inside "juanPlot"
             from setuptools import setup
 
             setup(
                 name='juanPlot',
-                version='0a2',
+                version='0a3',
                 packages=['juanPlot'],
+                options={"bdist_wheel": {"universal": True}},
             )
         run
-            ```python setup.py bdist_wheel --universal;```
+            ```python setup.py bdist_wheel;```
         Then
-            ```cp ./dist/juanPlot-0a2-py2.py3-none-any.whl ~/Documents/Repositories/drRNAseq/content```
+            ```cp ./dist/juanPlot-0a3-py2.py3-none-any.whl ~/Documents/Repositories/drRNAseq/content```
 """
 # import required libraries
 import numpy as np
@@ -412,6 +416,41 @@ def formatBarPlot_Nerli2022(geneSymbol, ax=None):
     ax.set_ylabel('counts (norm.)', fontproperties=fontLabels)
     ax.set_title(geneSymbol, fontproperties=fontTitle)
 
+def plotBars_Yoshimatsu2020(barData, geneSymbol, ax=None, pC=None):
+    """Creates a bar plot for a single gene for data from Yoshimatsu et al. (2020) (https://doi.org/10.1016/j.neuron.2020.04.021)
+    Arguments:
+        barData         : a 1D numpy array
+        geneSymbol      : gene Symbol for plot title
+        ax              : pyplot axis handle
+        pC              : photoreceptor colors for plotting
+    """
+    n = np.arange(1,5) # non-strike zone UV cones
+    n = np.append(n, 5 + np.arange(1,5)) # strike zone UV cones
+    h_start = 1
+    h_end = 9
+    h = barData.iloc[0,h_start:h_end].to_numpy()
+    # color array for bar plot
+    if not pC:
+        pC = {'u' : '#B540B7','u2' : '#B789A7'}
+    barColors = [
+        pC['u2'],pC['u2'],pC['u2'],pC['u2'],
+        pC['u'],pC['u'],pC['u'],pC['u']
+    ]
+    if not ax:
+        ax = plt.gca()
+    pH = ax.bar(n, h, width=0.8, bottom=None, align='center', data=None, color=barColors)
+    formatBarPlot_Yoshimatsu2020(geneSymbol, ax=ax)
+    return pH
+
+def formatBarPlot_Yoshimatsu2020(geneSymbol, ax=None):
+    if not ax:
+        ax = plt.gca()
+    [fontTicks, fontLabels, fontTitle] = defaultFonts(ax = ax);
+    ax.set_xticks([2.5,7.5])
+    ax.set_xticklabels(['UV$_{non-sz}$','UV$_{sz}$']);
+    ax.set_ylabel('cpm', fontproperties=fontLabels)
+    ax.set_title(geneSymbol, fontproperties=fontTitle)
+
 """heatmaps"""
 
 def heatmap_general(data, row_labels, col_labels, groupsN, groupsColors, groupsLabels, ax=None,
@@ -627,6 +666,32 @@ def heatmap_Nerli2022(heatmapData, ax=None, pC=None, norm=False):
         pC = {'RPC' : '#DADADA', 'PR' : '#dcc360', 'HC_AC' : '#3DF591', 'RGC' : '#F53D59'}
     groupsColors = np.array([pC['RPC'],pC['PR'],pC['HC_AC'],pC['RGC']])
     groupsLabels = np.array(['RPC','Photo','HC/AC','RGC'])
+    if not ax:
+        ax = plt.gca()
+    hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, ax=ax, cbarlabel=cbarlabel)
+    return hmH, cbH
+
+def heatmap_Yoshimatsu2020(heatmapData, ax=None, pC=None, norm=False):
+    """Main call for heatmap for data from Sun, Galicia and Stenkamp (2018)
+    Arguments:
+        heatmapData : pandas dataframe containing expression data to be plotted
+        pC : dict with custom photoreceptor colors
+        norm : boolean that determines if plotting is raw data or row-normalized
+    Returns:
+        hmH : heatmap handle
+        cbH : colorbar handle
+    """
+    genenames = heatmapData['symbol'].values
+    data = heatmapData.iloc[0:,1:9].values #in cpm
+    cbarlabel = "cpm"
+    if norm:
+        data = heatmapData.iloc[0:,1:9].apply(lambda x: x/x.max(), axis=1).values #normalized by max
+        cbarlabel = "norm. cpm"
+    groupsN = np.array([4,4])
+    if not pC:
+        pC = {'u' : '#B540B7','u2' : '#B789A7'}
+    groupsColors = np.array([pC['u2'],pC['u']])
+    groupsLabels = np.array(['UV$_{non-sz}$','UV$_{sz}$'])
     if not ax:
         ax = plt.gca()
     hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, ax=ax, cbarlabel=cbarlabel)
