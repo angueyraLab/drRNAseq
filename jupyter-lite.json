@@ -10,7 +10,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.a37e37c87d212fe85e13.js",
+        "load": "static/remoteEntry.9f387e5e108e458f62c3.js",
         "name": "@jupyter-widgets/jupyterlab-manager"
       },
       {
@@ -75,7 +75,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.2916befd91bdb8847e88.js",
+        "load": "static/remoteEntry.a36d13f475360b3d8988.js",
         "name": "bqplot"
       },
       {
@@ -93,7 +93,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.edc72ee71d4ec67598f6.js",
+        "load": "static/remoteEntry.5e71a5e8dcb6330c0085.js",
         "name": "jupyter-leaflet"
       },
       {
@@ -111,7 +111,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.70a4f7e7a0383740860d.js",
+        "load": "static/remoteEntry.2623fd701e6424a38dd6.js",
         "mimeExtension": "./mimeExtension",
         "name": "jupyterlab-plotly"
       },
