@@ -2,11 +2,18 @@
   "jupyter-config-data": {
     "appName": "JupyterLite",
     "appUrl": "./lab",
-    "appVersion": "0.1.3",
+    "appVersion": "0.3.0",
     "baseUrl": "./",
     "defaultKernelName": "python",
     "faviconUrl": "./lab/favicon.ico",
     "federated_extensions": [
+      {
+        "extension": "./extension",
+        "liteExtension": false,
+        "load": "static/remoteEntry.a1a4e0e795dca61023d3.js",
+        "name": "@jupyter-notebook/lab-extension",
+        "style": "./style"
+      },
       {
         "extension": "./extension",
         "liteExtension": false,
@@ -30,7 +37,7 @@
       {
         "extension": "./extension",
         "liteExtension": true,
-        "load": "static/remoteEntry.163c79433e7aa24fe93b.js",
+        "load": "static/remoteEntry.6014628263d9ee9ca44a.js",
         "name": "@jupyterlite/javascript-kernel-extension"
       },
       {
@@ -43,33 +50,13 @@
       {
         "extension": "./extension",
         "liteExtension": true,
-        "load": "static/remoteEntry.9eb7d88df6e74e509742.js",
+        "load": "static/remoteEntry.5005680d014e4b7f3db1.js",
         "name": "@jupyterlite/pyodide-kernel-extension"
       },
       {
         "extension": "./extension",
-        "liteExtension": true,
-        "load": "static/remoteEntry.f69e84c5aaec83c179ca.js",
-        "name": "@jupyterlite/xeus-lua-kernel",
-        "style": "./style"
-      },
-      {
-        "extension": "./extension",
-        "liteExtension": true,
-        "load": "static/remoteEntry.960d5d0f875a651e597f.js",
-        "name": "@jupyterlite/xeus-sqlite-kernel",
-        "style": "./style"
-      },
-      {
-        "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.8a4c97071917cf84832f.js",
-        "name": "@telamonian/theme-darcula"
-      },
-      {
-        "extension": "./extension",
-        "liteExtension": false,
-        "load": "static/remoteEntry.145e469029155b53b350.js",
+        "load": "static/remoteEntry.382ac9f028a244bc2d44.js",
         "name": "@timkpaine/jupyterlab_miami_nights"
       },
       {
@@ -397,17 +384,15 @@
       }
     },
     "fullLabextensionsUrl": "./extensions",
-    "fullMathjaxUrl": "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js",
     "fullStaticUrl": "./build",
     "licensesUrl": "./lab/api/licenses",
     "litePluginSettings": {
       "@jupyterlite/pyodide-kernel-extension:kernel": {
         "pipliteUrls": [
-          "./extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/all.json?sha256=d6259705de90ec1d2688f48036a8f16ae140b6607dee150901810daa493c632d"
+          "./extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/all.json?sha256=407e85cb8847d66d1897a62a4410ca2a2d67be109cd8a0c6ed109937c4cb1a86"
         ]
       }
-    },
-    "mathjaxConfig": "TeX-AMS_CHTML-full,Safe"
+    }
   },
   "jupyter-lite-schema-version": 0
 }
