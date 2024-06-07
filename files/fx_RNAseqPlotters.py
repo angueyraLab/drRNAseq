@@ -5,8 +5,11 @@
     Created: September 2021 (Angueyra)
     Updated: October 2022 (Angueyra)
         - Added plotting routines for _Dev notebook
-    Updated: November 2024 (Angueyra)
+    Updated: November 2023 (Angueyra)
         - Added plotting routines for Yoshimatsu et al, acute zone data and notebook
+    Updated: June 2024 (Angueyra)
+        - Added plotting routines for Xu et al, 2020 retinal development data and added to Dev notebook
+        
         To build wheel:
         copy .py function as "__init__.py"
         create directory "juanPlot"
@@ -276,6 +279,7 @@ def formatBarPlot_Hoang2020_Ret(geneSymbol, ax=None, pctPlot=False):
     if pctPlot:
         ax.set_ylabel('% expressing', fontproperties=fontLabels)
     ax.set_title(geneSymbol, fontproperties=fontTitle)
+    
 def plotBars_Hoang2020_PhotoDev(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
     """Creates a bar plot for a single gene for data from Hoang et al. (2020) (https://doi.org/10.1126/science.abb8598)
     Arguments:
@@ -375,6 +379,137 @@ def formatBarPlot_Hoang2020_PhotoDev_withcontaminatedlarvalrods(geneSymbol, ax=N
     if pctPlot:
         ax.set_ylabel('% expressing', fontproperties=fontLabels)
     ax.set_title(geneSymbol, fontproperties=fontTitle)
+
+
+def plotBars_Xu2020_RetDev(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
+    """Creates a bar plot for a single gene for data from Xu et al. (2020) (https://doi.org/10.1242/dev.185660)
+    Arguments:
+        barData         : a 1D numpy array
+        geneSymbol      : gene Symbol for plot title
+        ax              : pyplot axis handle
+        pC              : photoreceptor colors for plotting
+    """
+    n = np.arange(1,81)
+    delta = 0
+    if pctPlot:
+        delta = 82
+    h_start = 2 + delta
+    h_end = 82 + delta
+    h = barData.iloc[0,h_start:h_end].to_numpy()
+    # color array for bar plot
+    if not pC:
+        pC = {
+            'RPC24h_prim' : '#E9E9E9',
+            'RPC24h' : '#D2D2D2',
+            'RPC24h_D' : '#D2B6AF',
+            'RPC24h_V' : '#AFAFD2',
+            'RPC24h_T' : '#AFD2B0',
+            'RPC24h_N' : '#D2D1AF',
+            'RPC24h_neuro' : '#F5E5E8',
+            'RPC36h_prim' : '#E9E9E9',
+            'RPC36h' : '#D2D2D2',
+            'RPC36h_D' : '#D2B6AF',
+            'RPC36h_V' : '#AFAFD2',
+            'RPC36h_T' : '#AFD2B0',
+            'RPC36h_N' : '#D2D1AF',
+            'RPC36h_hc' : '#C5B39D',
+            'RPC36h_neuro' : '#F5E5E8',
+            'RPC48h_prim' : '#E9E9E9',
+            'RPC48h' : '#D2D2D2',
+            'RPC48h_neuro' : '#F5E5E8',
+            'RPC48h_neuroMix' : '#F5E5E8',
+            'RPC48h_rgc' : '#EA9D81',
+            'RPC48h_MG' : '#F5CCD2',
+            'PRPC48h' : '#dfdac8',
+            'Photo48h' : '#dacd9a',
+            'HC48h' : '#FCCAA5',
+            'BC48h' : '#7DAAAF',
+            'BC48h_on' : '#8398B1',
+            'BC48h_off' : '#B16D8A',
+            'AC48h' : '#95F5C1',
+            'AC48h_gaba' : '#91F5DA',
+            'AC48h_sac' : '#78AD93',
+            'RGC48h' : '#F53D59',
+            'RPC72h_prim' : '#262626',
+            'RPC72h_neuro' : '#F5E5E8',
+            'RPC72h_bc' : '#CCF2FF',
+            'RPC72h_rgc' : '#F5CCD2',
+            'PRPC72h' : '#DFDAC8',
+            'Rod72h_early' : '#A3A3A3',
+            'Rod72h' : '#7D7D7D',
+            'Cone72h_early' : '#DACD9A',
+            'Cone72h_earlyL' : '#D69F9E',
+            'Cone72h' : '#DCC360',
+            'Cone72h_UV' : '#B778B9',
+            'Cone72h_S' : '#7183CC',
+            'Cone72h_M' : '#57CB69',
+            'Cone72h_L' : '#C67271',
+            'Cone72h_lateL' : '#CE524F',
+            'HC72h_early' : '#FCCBA8',
+            'HC72h' : '#FCA668',
+            'HC72h_H1' : '#C59965',
+            'HC72h_H2H3' : '#F7909C',
+            'BC72h_on' : '#8398B1',
+            'AC72h' : '#3DF591',
+            'AC72h_gly' : '#91F5DA',
+            'AC72h_gaba' : '#95F5C1',
+            'AC72h_sac' : '#78AD93',
+            'RGC72h' : '#F53D59',
+            'MG72h' : '#EA9D81',
+            'RPC336h_prim' : '#262626',
+            'RPC336h_neuro' : '#F5E5E8',
+            'RPC336h_bc' : '#CCF2FF',
+            'RPC336h_ac' : '#B5F5D2',
+            'RPC336h_rgc' : '#F5CCD2',
+            'PRPC336h' : '#DFDAC8',
+            'Rod336h' : '#7D7D7D',
+            'Cone336h' : '#FFD429',
+            'Cone336h_U' : '#B778B9',
+            'Cone336h_S' : '#7183CC',
+            'Cone336h_M' : '#57CB69',
+            'Cone336h_L' : '#C67271',
+            'Cone336h_lateL' : '#CE524F',
+            'HC336h' : '#FCA668',
+            'BC336h_on' : '#8398B1',
+            'BC336h_off' : '#B16D8A',
+            'AC336h_gaba' : '#3DF5C3',
+            'AC336h_gly' : '#56F53D',
+            'AC336h_ngng' : '#89AC25',
+            'AC336h_sac' : '#78AD93',
+            'AC336h_dac' : '#A4D1D8',
+            'RGC336h' : '#F53D59',
+            'MG336h' : '#EA9D81',
+        }
+    barColors = [
+        pC['RPC24h_prim'],pC['RPC24h'],pC['RPC24h_D'],pC['RPC24h_V'],pC['RPC24h_T'],pC['RPC24h_N'],pC['RPC24h_neuro'],
+        pC['RPC36h_prim'],pC['RPC36h'],pC['RPC36h_D'],pC['RPC36h_V'],pC['RPC36h_T'],pC['RPC36h_N'],pC['RPC36h_hc'],pC['RPC36h_neuro'],
+        pC['RPC48h_prim'],pC['RPC48h'],pC['RPC48h_neuro'],pC['RPC48h_neuroMix'],pC['RPC48h_rgc'],pC['RPC48h_MG'],pC['PRPC48h'],pC['Photo48h'],
+        pC['HC48h'],pC['BC48h'],pC['BC48h_on'],pC['BC48h_off'],pC['AC48h'],pC['AC48h_gaba'],pC['AC48h_sac'],pC['RGC48h'],
+        pC['RPC72h_prim'],pC['RPC72h_neuro'],pC['RPC72h_bc'],pC['RPC72h_rgc'],pC['PRPC72h'],pC['Rod72h_early'],pC['Rod72h'],pC['Cone72h_early'],
+        pC['Cone72h_earlyL'],pC['Cone72h'],pC['Cone72h_UV'],pC['Cone72h_S'],pC['Cone72h_M'],pC['Cone72h_L'],pC['Cone72h_lateL'],pC['HC72h_early'],
+        pC['HC72h'],pC['HC72h_H1'],pC['HC72h_H2H3'],pC['BC72h_on'],pC['AC72h'],pC['AC72h_gly'],pC['AC72h_gaba'],pC['AC72h_sac'],pC['RGC72h'],pC['MG72h'],
+        pC['RPC336h_prim'],pC['RPC336h_neuro'],pC['RPC336h_bc'],pC['RPC336h_ac'],pC['RPC336h_rgc'],pC['PRPC336h'],pC['Rod336h'],pC['Cone336h'],
+        pC['Cone336h_U'],pC['Cone336h_S'],pC['Cone336h_M'],pC['Cone336h_L'],pC['Cone336h_lateL'],pC['HC336h'],pC['BC336h_on'],pC['BC336h_off'],
+        pC['AC336h_gaba'],pC['AC336h_gly'],pC['AC336h_ngng'],pC['AC336h_sac'],pC['AC336h_dac'],pC['RGC336h'],pC['MG336h']
+    ]
+    if not ax:
+        ax = plt.gca()
+    pH = ax.bar(n, h, width=0.8, bottom=None, align='center', data=None, color=barColors)
+    formatBarPlot_Xu2020_RetDev(geneSymbol, ax=ax, pctPlot=pctPlot)
+    return pH
+
+def formatBarPlot_Xu2020_RetDev(geneSymbol, ax=None, pctPlot=False):
+    if not ax:
+        ax = plt.gca()
+    [fontTicks, fontLabels, fontTitle] = defaultFonts(ax = ax);
+    ax.set_xticks(np.arange(1,81))
+    ax.set_xticklabels(["RPC24h_prim","RPC24h","RPC24h_D","RPC24h_V","RPC24h_T","RPC24h_N","RPC24h_neuro","RPC36h_prim","RPC36h","RPC36h_D","RPC36h_V","RPC36h_T","RPC36h_N","RPC36h_hc","RPC36h_neuro","RPC48h_prim","RPC48h","RPC48h_neuro","RPC48h_neuroMix","RPC48h_rgc","RPC48h_MG","PRPC48h","Photo48h","HC48h","BC48h","BC48h_on","BC48h_off","AC48h","AC48h_gaba","AC48h_sac","RGC48h","RPC72h_prim","RPC72h_neuro","RPC72h_bc","RPC72h_rgc","PRPC72h","Rod72h_early","Rod72h","Cone72h_early","Cone72h_earlyL","Cone72h","Cone72h_UV","Cone72h_S","Cone72h_M","Cone72h_L","Cone72h_lateL","HC72h_early","HC72h","HC72h_H1","HC72h_H2H3","BC72h_on","AC72h","AC72h_gly","AC72h_gaba","AC72h_sac","RGC72h","MG72h","RPC336h_prim","RPC336h_neuro","RPC336h_bc","RPC336h_ac","RPC336h_rgc","PRPC336h","Rod336h","Cone336h","Cone336h_U","Cone336h_S","Cone336h_M","Cone336h_L","Cone336h_lateL","HC336h","BC336h_on","BC336h_off","AC336h_gaba","AC336h_gly","AC336h_ngng","AC336h_sac","AC336h_dac","RGC336h","MG336h","RPC24h_prim","RPC24h","RPC24h_D","RPC24h_V","RPC24h_T","RPC24h_N","RPC24h_neuro","RPC36h_prim","RPC36h","RPC36h_D","RPC36h_V","RPC36h_T","RPC36h_N","RPC36h_hc","RPC36h_neuro","RPC48h_prim","RPC48h","RPC48h_neuro","RPC48h_neuroMix","RPC48h_rgc","RPC48h_MG","PRPC48h","Photo48h","HC48h","BC48h","BC48h_on","BC48h_off","AC48h","AC48h_gaba","AC48h_sac","RGC48h","RPC72h_prim","RPC72h_neuro","RPC72h_bc","RPC72h_rgc","PRPC72h","Rod72h_early","Rod72h","Cone72h_early","Cone72h_earlyL","Cone72h","Cone72h_UV","Cone72h_S","Cone72h_M","Cone72h_L","Cone72h_lateL","HC72h_early","HC72h","HC72h_H1","HC72h_H2H3","BC72h_on","AC72h","AC72h_gly","AC72h_gaba","AC72h_sac","RGC72h","MG72h","RPC336h_prim","RPC336h_neuro","RPC336h_bc","RPC336h_ac","RPC336h_rgc","PRPC336h","Rod336h","Cone336h","Cone336h_U","Cone336h_S","Cone336h_M","Cone336h_L","Cone336h_lateL","HC336h","BC336h_on","BC336h_off","AC336h_gaba","AC336h_gly","AC336h_ngng","AC336h_sac","AC336h_dac","RGC336h","MG336h"]);
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right", va="center",rotation_mode="anchor")
+    ax.set_ylabel('avg. counts', fontproperties=fontLabels)
+    if pctPlot:
+        ax.set_ylabel('% expressing', fontproperties=fontLabels)
+    ax.set_title(geneSymbol, fontproperties=fontTitle)
+
 
 def plotBars_Nerli2022(barData, geneSymbol, ax=None, pC=None):
     """Creates a bar plot for a single gene
@@ -820,3 +955,138 @@ def heatmap_Hoang2020_PhotoDev_withcontaminatedlarvalrods(heatmapData, ax=None, 
         ax = plt.gca()
     hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, groupRotation = 45, ax=ax, cbarlabel=cbarlabel)
     return hmH, cbH
+
+def heatmap_Xu2020_RetDev(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
+    """Main call for heatmap for reanalyzed data from Hoang et al. (2020)
+    Arguments:
+        heatmapData : pandas dataframe containing expression data to be plotted
+        pC : dict with custom photoreceptor colors
+        norm : boolean that determines if plotting is raw data or row-normalized
+    Returns:
+        hmH : heatmap handle
+        cbH : colorbar handle
+    """
+    genenames = heatmapData['symbol'].values
+    cbarlabel = "avg."
+    delta = 0
+    if pctPlot:
+        delta = 81
+        cbarlabel = "%"
+    data = heatmapData.iloc[0:,2+delta:82+delta].values #avg. counts or percent expression
+    if norm:
+        data = heatmapData.iloc[0:,2+delta:82+delta].apply(lambda x: x/x.max(), axis=1).values #normalized by max
+        cbarlabel = "norm. " + cbarlabel
+    groupsN = np.array([
+        1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,
+        1
+        ])
+
+    if not pC:
+        pC = {
+            'RPC24h_prim' : '#E9E9E9',
+            'RPC24h' : '#D2D2D2',
+            'RPC24h_D' : '#D2B6AF',
+            'RPC24h_V' : '#AFAFD2',
+            'RPC24h_T' : '#AFD2B0',
+            'RPC24h_N' : '#D2D1AF',
+            'RPC24h_neuro' : '#F5E5E8',
+            'RPC36h_prim' : '#E9E9E9',
+            'RPC36h' : '#D2D2D2',
+            'RPC36h_D' : '#D2B6AF',
+            'RPC36h_V' : '#AFAFD2',
+            'RPC36h_T' : '#AFD2B0',
+            'RPC36h_N' : '#D2D1AF',
+            'RPC36h_hc' : '#C5B39D',
+            'RPC36h_neuro' : '#F5E5E8',
+            'RPC48h_prim' : '#E9E9E9',
+            'RPC48h' : '#D2D2D2',
+            'RPC48h_neuro' : '#F5E5E8',
+            'RPC48h_neuroMix' : '#F5E5E8',
+            'RPC48h_rgc' : '#EA9D81',
+            'RPC48h_MG' : '#F5CCD2',
+            'PRPC48h' : '#dfdac8',
+            'Photo48h' : '#dacd9a',
+            'HC48h' : '#FCCAA5',
+            'BC48h' : '#7DAAAF',
+            'BC48h_on' : '#8398B1',
+            'BC48h_off' : '#B16D8A',
+            'AC48h' : '#95F5C1',
+            'AC48h_gaba' : '#91F5DA',
+            'AC48h_sac' : '#78AD93',
+            'RGC48h' : '#F53D59',
+            'RPC72h_prim' : '#262626',
+            'RPC72h_neuro' : '#F5E5E8',
+            'RPC72h_bc' : '#CCF2FF',
+            'RPC72h_rgc' : '#F5CCD2',
+            'PRPC72h' : '#DFDAC8',
+            'Rod72h_early' : '#A3A3A3',
+            'Rod72h' : '#7D7D7D',
+            'Cone72h_early' : '#DACD9A',
+            'Cone72h_earlyL' : '#D69F9E',
+            'Cone72h' : '#DCC360',
+            'Cone72h_UV' : '#B778B9',
+            'Cone72h_S' : '#7183CC',
+            'Cone72h_M' : '#57CB69',
+            'Cone72h_L' : '#C67271',
+            'Cone72h_lateL' : '#CE524F',
+            'HC72h_early' : '#FCCBA8',
+            'HC72h' : '#FCA668',
+            'HC72h_H1' : '#C59965',
+            'HC72h_H2H3' : '#F7909C',
+            'BC72h_on' : '#8398B1',
+            'AC72h' : '#3DF591',
+            'AC72h_gly' : '#91F5DA',
+            'AC72h_gaba' : '#95F5C1',
+            'AC72h_sac' : '#78AD93',
+            'RGC72h' : '#F53D59',
+            'MG72h' : '#EA9D81',
+            'RPC336h_prim' : '#262626',
+            'RPC336h_neuro' : '#F5E5E8',
+            'RPC336h_bc' : '#CCF2FF',
+            'RPC336h_ac' : '#B5F5D2',
+            'RPC336h_rgc' : '#F5CCD2',
+            'PRPC336h' : '#DFDAC8',
+            'Rod336h' : '#7D7D7D',
+            'Cone336h' : '#FFD429',
+            'Cone336h_U' : '#B778B9',
+            'Cone336h_S' : '#7183CC',
+            'Cone336h_M' : '#57CB69',
+            'Cone336h_L' : '#C67271',
+            'Cone336h_lateL' : '#CE524F',
+            'HC336h' : '#FCA668',
+            'BC336h_on' : '#8398B1',
+            'BC336h_off' : '#B16D8A',
+            'AC336h_gaba' : '#3DF5C3',
+            'AC336h_gly' : '#56F53D',
+            'AC336h_ngng' : '#89AC25',
+            'AC336h_sac' : '#78AD93',
+            'AC336h_dac' : '#A4D1D8',
+            'RGC336h' : '#F53D59',
+            'MG336h' : '#EA9D81',
+        }
+    groupsColors = np.array([
+        pC['RPC24h_prim'],pC['RPC24h'],pC['RPC24h_D'],pC['RPC24h_V'],pC['RPC24h_T'],pC['RPC24h_N'],pC['RPC24h_neuro'],
+        pC['RPC36h_prim'],pC['RPC36h'],pC['RPC36h_D'],pC['RPC36h_V'],pC['RPC36h_T'],pC['RPC36h_N'],pC['RPC36h_hc'],pC['RPC36h_neuro'],
+        pC['RPC48h_prim'],pC['RPC48h'],pC['RPC48h_neuro'],pC['RPC48h_neuroMix'],pC['RPC48h_rgc'],pC['RPC48h_MG'],pC['PRPC48h'],pC['Photo48h'],
+        pC['HC48h'],pC['BC48h'],pC['BC48h_on'],pC['BC48h_off'],pC['AC48h'],pC['AC48h_gaba'],pC['AC48h_sac'],pC['RGC48h'],
+        pC['RPC72h_prim'],pC['RPC72h_neuro'],pC['RPC72h_bc'],pC['RPC72h_rgc'],pC['PRPC72h'],pC['Rod72h_early'],pC['Rod72h'],pC['Cone72h_early'],
+        pC['Cone72h_earlyL'],pC['Cone72h'],pC['Cone72h_UV'],pC['Cone72h_S'],pC['Cone72h_M'],pC['Cone72h_L'],pC['Cone72h_lateL'],pC['HC72h_early'],
+        pC['HC72h'],pC['HC72h_H1'],pC['HC72h_H2H3'],pC['BC72h_on'],pC['AC72h'],pC['AC72h_gly'],pC['AC72h_gaba'],pC['AC72h_sac'],pC['RGC72h'],pC['MG72h'],
+        pC['RPC336h_prim'],pC['RPC336h_neuro'],pC['RPC336h_bc'],pC['RPC336h_ac'],pC['RPC336h_rgc'],pC['PRPC336h'],pC['Rod336h'],pC['Cone336h'],
+        pC['Cone336h_U'],pC['Cone336h_S'],pC['Cone336h_M'],pC['Cone336h_L'],pC['Cone336h_lateL'],pC['HC336h'],pC['BC336h_on'],pC['BC336h_off'],
+        pC['AC336h_gaba'],pC['AC336h_gly'],pC['AC336h_ngng'],pC['AC336h_sac'],pC['AC336h_dac'],pC['RGC336h'],pC['MG336h']
+    ])
+    groupsLabels = np.array(["RPC24h_prim","RPC24h","RPC24h_D","RPC24h_V","RPC24h_T","RPC24h_N","RPC24h_neuro","RPC36h_prim","RPC36h","RPC36h_D","RPC36h_V","RPC36h_T","RPC36h_N","RPC36h_hc","RPC36h_neuro","RPC48h_prim","RPC48h","RPC48h_neuro","RPC48h_neuroMix","RPC48h_rgc","RPC48h_MG","PRPC48h","Photo48h","HC48h","BC48h","BC48h_on","BC48h_off","AC48h","AC48h_gaba","AC48h_sac","RGC48h","RPC72h_prim","RPC72h_neuro","RPC72h_bc","RPC72h_rgc","PRPC72h","Rod72h_early","Rod72h","Cone72h_early","Cone72h_earlyL","Cone72h","Cone72h_UV","Cone72h_S","Cone72h_M","Cone72h_L","Cone72h_lateL","HC72h_early","HC72h","HC72h_H1","HC72h_H2H3","BC72h_on","AC72h","AC72h_gly","AC72h_gaba","AC72h_sac","RGC72h","MG72h","RPC336h_prim","RPC336h_neuro","RPC336h_bc","RPC336h_ac","RPC336h_rgc","PRPC336h","Rod336h","Cone336h","Cone336h_U","Cone336h_S","Cone336h_M","Cone336h_L","Cone336h_lateL","HC336h","BC336h_on","BC336h_off","AC336h_gaba","AC336h_gly","AC336h_ngng","AC336h_sac","AC336h_dac","RGC336h","MG336h","RPC24h_prim","RPC24h","RPC24h_D","RPC24h_V","RPC24h_T","RPC24h_N","RPC24h_neuro","RPC36h_prim","RPC36h","RPC36h_D","RPC36h_V","RPC36h_T","RPC36h_N","RPC36h_hc","RPC36h_neuro","RPC48h_prim","RPC48h","RPC48h_neuro","RPC48h_neuroMix","RPC48h_rgc","RPC48h_MG","PRPC48h","Photo48h","HC48h","BC48h","BC48h_on","BC48h_off","AC48h","AC48h_gaba","AC48h_sac","RGC48h","RPC72h_prim","RPC72h_neuro","RPC72h_bc","RPC72h_rgc","PRPC72h","Rod72h_early","Rod72h","Cone72h_early","Cone72h_earlyL","Cone72h","Cone72h_UV","Cone72h_S","Cone72h_M","Cone72h_L","Cone72h_lateL","HC72h_early","HC72h","HC72h_H1","HC72h_H2H3","BC72h_on","AC72h","AC72h_gly","AC72h_gaba","AC72h_sac","RGC72h","MG72h","RPC336h_prim","RPC336h_neuro","RPC336h_bc","RPC336h_ac","RPC336h_rgc","PRPC336h","Rod336h","Cone336h","Cone336h_U","Cone336h_S","Cone336h_M","Cone336h_L","Cone336h_lateL","HC336h","BC336h_on","BC336h_off","AC336h_gaba","AC336h_gly","AC336h_ngng","AC336h_sac","AC336h_dac","RGC336h","MG336h"])
+    if not ax:
+        ax = plt.gca()
+    hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, groupRotation = 45, ax=ax, cbarlabel=cbarlabel)
+    return hmH, cbH
+
+
