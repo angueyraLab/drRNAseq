@@ -26,7 +26,7 @@ jobs:
           cp README.md content
           jupyter lite build --contents content
       - name: Upload (dist)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: jupyterlite-demo-dist-${{ github.run_number }}
           path: ./_output
