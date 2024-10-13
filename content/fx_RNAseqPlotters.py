@@ -139,6 +139,108 @@ def formatBarPlot_Ogawa2021(geneSymbol, ax=None, pctPlot=False):
         ax.set_ylabel('% expressing', fontproperties=fontLabels)
     ax.set_title(geneSymbol, fontproperties=fontTitle)
 
+def plotBars_Abur2024(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
+    """Creates a bar plot for a single gene for data from Abur (unpublished): photoreceptors
+    Arguments:
+        barData         : a 1D numpy array
+        geneSymbol      : gene Symbol for plot title
+        ax              : pyplot axis handle
+        pC              : photoreceptor colors for plotting
+    """
+    n = np.arange(1,7)
+    delta = 0
+    if pctPlot:
+        delta = 7
+    h_start = 2 + delta
+    h_end = 8 + delta
+    h = barData.iloc[0,h_start:h_end].to_numpy()
+    # color array for bar plot
+    if not pC:
+        pC = {'r' : '#747474', 'c':'#ffd429', 'u' : '#B540B7', 's' : '#4669F2','m' : '#04CD22','l' : '#CC2C2A',
+        'm4': '#cdcd04','BC': '#ccf2ff'}
+    barColors = [
+        pC['r'],pC['c'],pC['u'],
+        pC['m'],pC['l'],pC['BC']
+    ]
+    if not ax:
+        ax = plt.gca()
+    pH = ax.bar(n, h, width=0.8, bottom=None, align='center', data=None, color=barColors)
+    formatBarPlot_Abur2024(geneSymbol, ax=ax, pctPlot=pctPlot)
+    return pH
+
+def formatBarPlot_Abur2024(geneSymbol, ax=None, pctPlot=False):
+    if not ax:
+        ax = plt.gca()
+    [fontTicks, fontLabels, fontTitle] = defaultFonts(ax = ax);
+    ax.set_xticks(np.arange(1,7))
+    ax.set_xticklabels(['Rods','Cones','UV','M','L','BC']);
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right", va="center",rotation_mode="anchor")
+    ax.set_ylabel('avg. counts', fontproperties=fontLabels)
+    if pctPlot:
+        ax.set_ylabel('% expressing', fontproperties=fontLabels)
+    ax.set_title(geneSymbol, fontproperties=fontTitle)
+
+def plotBars_Abur2024_Ret(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
+    """Creates a bar plot for a single gene for data from Abur (unpublished): retinal cells
+    Arguments:
+        barData         : a 1D numpy array
+        geneSymbol      : gene Symbol for plot title
+        ax              : pyplot axis handle
+        pC              : photoreceptor colors for plotting
+    """
+    n = np.arange(1,7)
+    delta = 0
+    if pctPlot:
+        delta = 18
+    h_start = 2 + delta
+    h_end = 8 + delta
+    h = barData.iloc[0,h_start:h_end].to_numpy()
+    # color array for bar plot
+    if not pC:
+        pC = {
+            'r' : '#7D7D7D',
+            'c' : '#FFD429',
+            'u' : '#B778B9',
+            'm' : '#57CB69',
+            'l' : '#CE524F',
+            'h1' : '#FC7715',
+            'h2' : '#FC6174',
+            'h3' : '#FF10BA',
+            'bc' : '#8398B1',
+            'ac_gaba' : '#3DF5C3',
+            'ac_gly' : '#56F53D',
+            'ac_sac' : '#78AD93',
+            'rgc' : '#F53D59',
+            'mg' : '#EA9D81',
+            'doublet' : '#CFCFCF'
+        }
+    barColors = [
+        pC['r'],pC['c'],pC['u'],pC['m'],pC['l'],
+        pC['h1'],pC['h2'],pC['h3'],
+        pC['bc'],
+        pC['ac_gaba'],pC['ac_gly'],pC['ac_sac'],
+        pC['rgc'],pC['mg'],
+        pC['doublet'],pC['doublet'],pC['doublet']
+    ]
+    if not ax:
+        ax = plt.gca()
+    pH = ax.bar(n, h, width=0.8, bottom=None, align='center', data=None, color=barColors)
+    formatBarPlot_Abur2024_Ret(geneSymbol, ax=ax, pctPlot=pctPlot)
+    return pH
+
+def formatBarPlot_Abur2024_Ret(geneSymbol, ax=None, pctPlot=False):
+    if not ax:
+        ax = plt.gca()
+    [fontTicks, fontLabels, fontTitle] = defaultFonts(ax = ax);
+    ax.set_xticks(np.arange(1,7))
+    ax.set_xticklabels(['Rod','Cone_i','Cone_UV','Cone_M','Cone_L','H1','H2','H3','BC','AC_gaba','AC_gly','AC_sac','RGC','MG','doubletC','doubletMGAC','doubletMGBC']);
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right", va="center",rotation_mode="anchor")
+    ax.set_ylabel('avg. counts', fontproperties=fontLabels)
+    if pctPlot:
+        ax.set_ylabel('% expressing', fontproperties=fontLabels)
+    ax.set_title(geneSymbol, fontproperties=fontTitle)
+    
+
 def plotBars_Hoang2020(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
     """Creates a bar plot for a single gene for data from Hoang et al. (2020) (https://doi.org/10.1126/science.abb8598)
     Arguments:
@@ -175,7 +277,7 @@ def formatBarPlot_Hoang2020(geneSymbol, ax=None, pctPlot=False):
     [fontTicks, fontLabels, fontTitle] = defaultFonts(ax = ax);
     ax.set_xticks(np.arange(1,8))
     ax.set_xticklabels(['Rods','UV','S','M1','M3', 'M4','L']);
-    ax.xaxis.set_tick_params(rotation=45)
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right", va="center",rotation_mode="anchor")
     ax.set_ylabel('avg. counts', fontproperties=fontLabels)
     if pctPlot:
         ax.set_ylabel('% expressing', fontproperties=fontLabels)
@@ -720,6 +822,83 @@ def heatmap_Ogawa2021(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
     if not ax:
         ax = plt.gca()
     hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, ax=ax, cbarlabel=cbarlabel)
+    return hmH, cbH
+
+def heatmap_Abur2024_Photo(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
+    """Main call for heatmap for reanalyzed data from Carleton et al. (2024) (unpublished): Photoreceptors
+    Arguments:
+        heatmapData : pandas dataframe containing expression data to be plotted
+        pC : dict with custom photoreceptor colors
+        norm : boolean that determines if plotting is raw data or row-normalized
+    Returns:
+        hmH : heatmap handle
+        cbH : colorbar handle
+    """
+    genenames = heatmapData['symbol'].values
+    cbarlabel = "avg."
+    delta = 0
+    if pctPlot:
+        delta = 7
+        cbarlabel = "%"
+    data = heatmapData.iloc[0:,2+delta:8+delta].values #avg. counts or percent expression
+    if norm:
+        data = heatmapData.iloc[0:,2+delta:8+delta].apply(lambda x: x/x.max(), axis=1).values #normalized by max
+        cbarlabel = "norm. " + cbarlabel
+    groupsN = np.array([1,1,1,1,1,1])
+    if not pC:
+        pC = {'r' : '#747474', 'c':'#ffd429', 'u' : '#B540B7', 's' : '#4669F2','m' : '#04CD22','l' : '#CC2C2A',
+        'm4': '#cdcd04','BC': '#ccf2ff'}
+    groupsColors = np.array([pC['r'],pC['c'],pC['u'],pC['m'],pC['l'],pC['BC']])
+    groupsLabels = np.array(['Rods','Cones','UV','M','L','BC'])
+    if not ax:
+        ax = plt.gca()
+    hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, ax=ax, cbarlabel=cbarlabel)
+    return hmH, cbH
+
+def heatmap_Abur2024_Ret(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
+    """Main call for heatmap for reanalyzed data from Carleton et al. (2024) (unpublished): Retinal Cells
+    Arguments:
+        heatmapData : pandas dataframe containing expression data to be plotted
+        pC : dict with custom photoreceptor colors
+        norm : boolean that determines if plotting is raw data or row-normalized
+    Returns:
+        hmH : heatmap handle
+        cbH : colorbar handle
+    """
+    genenames = heatmapData['symbol'].values
+    cbarlabel = "avg."
+    delta = 0
+    if pctPlot:
+        delta = 18
+        cbarlabel = "%"
+    data = heatmapData.iloc[0:,2+delta:19+delta].values #avg. counts or percent expression
+    if norm:
+        data = heatmapData.iloc[0:,2+delta:19+delta].apply(lambda x: x/x.max(), axis=1).values #normalized by max
+        cbarlabel = "norm. " + cbarlabel
+    groupsN = np.array([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
+    if not pC:
+        pC = {
+            'r' : '#7D7D7D',
+            'c' : '#FFD429',
+            'u' : '#B778B9',
+            'm' : '#57CB69',
+            'l' : '#CE524F',
+            'h1' : '#FC7715',
+            'h2' : '#FC6174',
+            'h3' : '#FF10BA',
+            'bc' : '#8398B1',
+            'ac_gaba' : '#3DF5C3',
+            'ac_gly' : '#56F53D',
+            'ac_sac' : '#78AD93',
+            'rgc' : '#F53D59',
+            'mg' : '#EA9D81',
+            'doublet' : '#CFCFCF'
+        }
+    groupsColors = np.array([pC['r'],pC['c'],pC['u'],pC['m'],pC['l'],pC['h1'],pC['h2'],pC['h3'],pC['bc'],pC['ac_gaba'],pC['ac_gly'],pC['ac_sac'],pC['rgc'],pC['mg'],pC['doublet'],pC['doublet'],pC['doublet']])
+    groupsLabels = np.array(['Rod','Cone_i','Cone_UV','Cone_M','Cone_L','H1','H2','H3','BC','AC_gaba','AC_gly','AC_sac','RGC','MG','doubletC','doubletMGAC','doubletMGBC'])
+    if not ax:
+        ax = plt.gca()
+    hmH, cbH = heatmap_general(data, genenames, [], groupsN, groupsColors, groupsLabels, groupRotation = 45, ax=ax, cbarlabel=cbarlabel)
     return hmH, cbH
 
 def heatmap_Hoang2020(heatmapData, ax=None, pC=None, pctPlot=False, norm=False):
