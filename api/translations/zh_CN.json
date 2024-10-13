@@ -211,6 +211,12 @@
         "plural_forms": "nplurals=1; plural=0;",
         "version": "jupyterlab"
       },
+      "%1 %2 %3": [
+        "%1 %2 %3"
+      ],
+      "%1 %2 / %3 %4": [
+        "%1 %2 / %3 %4"
+      ],
       "%2%% used on %1 CPU": [
         "\u5df2\u4f7f\u7528 %2%% / %1 CPU",
         ""
@@ -335,11 +341,17 @@
       "settings\u0004CPU Settings": [
         "CPU\u8bbe\u7f6e"
       ],
+      "settings\u0004Disk Settings": [
+        "\u78c1\u76d8\u8bbe\u7f6e"
+      ],
       "settings\u0004Enable resource usage indicators": [
         "\u542f\u7528\u8d44\u6e90\u4f7f\u7528\u60c5\u51b5\u6307\u793a\u5668"
       ],
       "settings\u0004Label for the cpu indicator": [
         "CPU\u6307\u793a\u5668\u6807\u7b7e"
+      ],
+      "settings\u0004Label for the disk indicator": [
+        "\u78c1\u76d8\u6307\u793a\u5668\u6807\u7b7e"
       ],
       "settings\u0004Label for the memory indicator": [
         "\u5185\u5b58\u6307\u793a\u5668\u6807\u7b7e"
@@ -355,6 +367,9 @@
       ],
       "settings\u0004Settings for the CPU indicator": [
         "CPU\u6307\u793a\u5668\u8bbe\u7f6e"
+      ],
+      "settings\u0004Settings for the Disk indicator": [
+        "\u78c1\u76d8\u6307\u793a\u5668\u8bbe\u7f6e"
       ],
       "settings\u0004Settings for the memory indicator": [
         "\u5185\u5b58\u6307\u793a\u5668\u8bbe\u7f6e"
@@ -4680,6 +4695,9 @@
       "settings\u0004Add accessibility elements for use with screen readers.": [
         "\u6dfb\u52a0\u7528\u4e8e\u5c4f\u5e55\u9605\u8bfb\u5668\u7684\u8f85\u52a9\u5143\u7d20\u3002"
       ],
+      "settings\u0004Allow named properties": [
+        "\u5141\u8bb8\u547d\u540d\u5c5e\u6027"
+      ],
       "settings\u0004Allowed URL Scheme": [
         "\u5141\u8bb8\u7684 URL \u534f\u8bae"
       ],
@@ -4832,6 +4850,9 @@
       ],
       "settings\u0004Editor Configuration": [
         "\u7f16\u8f91\u5668\u914d\u7f6e"
+      ],
+      "settings\u0004Editor resize delay": [
+        "\u7f16\u8f91\u5668\u8c03\u6574\u5927\u5c0f\u7684\u5ef6\u8fdf"
       ],
       "settings\u0004Enable 1st headings numbering": [
         "\u542f\u7528\u7b2c\u4e00\u7ea7\u6807\u9898\u7f16\u53f7"
@@ -5007,6 +5028,9 @@
       "settings\u0004Length of save interval in seconds": [
         "\u4fdd\u5b58\u95f4\u9694\uff08\u79d2\uff09"
       ],
+      "settings\u0004Limit inline completion lines": [
+        "\u9650\u5236\u5185\u8054\u8865\u5168\u884c\u6570"
+      ],
       "settings\u0004Line Height": [
         "\u884c\u9ad8"
       ],
@@ -5118,6 +5142,12 @@
       "settings\u0004Number of cells to render outside de the viewport": [
         "\u5728\u89c6\u53e3\u5916\u6e32\u67d3\u7684\u5355\u5143\u683c\u6570\u91cf"
       ],
+      "settings\u0004Number of lines of inline completion to show before collapsing. Setting zero disables the limit.": [
+        "\u6298\u53e0\u524d\u663e\u793a\u7684\u5185\u8054\u8865\u5168\u884c\u6570\u3002\u8bbe\u4e3a\u96f6\u5219\u4e0d\u9650\u5236\u884c\u6570\u3002"
+      ],
+      "settings\u0004Number of lines to reserve for the ghost text with inline completion suggestion.": [
+        "\u4e3a\u5185\u8054\u8865\u5168\u5efa\u8bae\u7684\u9884\u89c8\u6587\u672c\u9884\u7559\u7684\u884c\u6570\u3002"
+      ],
       "settings\u0004Number of recently opened/closed files and directories to remember.": [
         "\u8981\u8bb0\u4f4f\u7684\u6700\u8fd1\u6253\u5f00/\u5173\u95ed\u7684\u6587\u4ef6\u548c\u76ee\u5f55\u7684\u6570\u91cf\u3002"
       ],
@@ -5171,6 +5201,12 @@
       ],
       "settings\u0004Rendering Layout": [
         "\u6e32\u67d3\u5e03\u5c40"
+      ],
+      "settings\u0004Reserve lines for inline completion": [
+        "\u4e3a\u5185\u8054\u8865\u5168\u9884\u7559\u884c"
+      ],
+      "settings\u0004Reserve space for the longest candidate": [
+        "\u4e3a\u6700\u957f\u5019\u9009\u9879\u4fdd\u7559\u7a7a\u95f4"
       ],
       "settings\u0004Scheme allowed by the HTML sanitizer.": [
         "HTML \u51c0\u5316\u5668\u4e2d\u5141\u8bb8\u7684\u534f\u8bae"
@@ -5442,6 +5478,12 @@
       "settings\u0004Variables to filter out in the tree and table viewers": [
         "\u5728\u6811\u548c\u8868\u683c\u67e5\u770b\u5668\u4e2d\u7b5b\u9009\u53d8\u91cf"
       ],
+      "settings\u0004When an inline completion gets cancelled the editor may change its size rapidly. When typing in the editor, the completions may get dismissed frequently causing a noticeable jitter of the editor height. Adding a delay prevents the jitter on typing. The value should be in milliseconds.": [
+        "\u5f53\u5185\u8054\u8865\u5168\u88ab\u53d6\u6d88\u65f6\uff0c\u7f16\u8f91\u5668\u53ef\u80fd\u4f1a\u5feb\u901f\u6539\u53d8\u5927\u5c0f\u3002\u5728\u7f16\u8f91\u5668\u4e2d\u8f93\u5165\u65f6\uff0c\u8865\u5168\u53ef\u80fd\u4f1a\u9891\u7e41\u6d88\u5931\uff0c\u5bfc\u81f4\u7f16\u8f91\u5668\u9ad8\u5ea6\u660e\u663e\u6296\u52a8\u3002\u6dfb\u52a0\u5ef6\u8fdf\u53ef\u4ee5\u9632\u6b62\u8f93\u5165\u65f6\u7684\u6b64\u7c7b\u6296\u52a8\u3002\u8be5\u503c\u5e94\u4ee5\u6beb\u79d2\u4e3a\u5355\u4f4d\u3002"
+      ],
+      "settings\u0004When multiple completions are returned, reserve blank space for up to as many lines as in the longest completion candidate to avoid resizing editor when cycling between the suggestions.": [
+        "\u5f53\u8fd4\u56de\u591a\u4e2a\u8865\u5168\u7ed3\u679c\u65f6\uff0c\u4e3a\u6700\u957f\u7684\u8865\u5168\u5019\u9009\u9879\u9884\u7559\u7a7a\u767d\u884c\uff0c\u884c\u6570\u4e0e\u5176\u4e00\u81f4\uff0c\u4ee5\u907f\u514d\u5728\u4e0d\u540c\u5efa\u8bae\u95f4\u5207\u6362\u65f6\u8c03\u6574\u7f16\u8f91\u5668\u5927\u5c0f\u3002"
+      ],
       "settings\u0004When multiple servers match specific document/language, the server with the highest rank will be used": [
         "\u5f53\u591a\u4e2a\u670d\u52a1\u5668\u5339\u914d\u7279\u5b9a\u7684\u6587\u6863/\u8bed\u8a00\u65f6\uff0c\u5c06\u4f7f\u7528\u6392\u540d\u6700\u9ad8\u7684\u670d\u52a1\u5668\u3002"
       ],
@@ -5477,6 +5519,9 @@
       ],
       "settings\u0004Whether the user agrees the access to external web services and understands extensions may introduce security risks or contain malicious code that runs on his machine.": [
         "\u7528\u6237\u662f\u5426\u540c\u610f\u8bbf\u95ee\u5916\u90e8\u7f51\u7edc\u670d\u52a1\u5e76\u4e86\u89e3\u6269\u5c55\u53ef\u80fd\u4f1a\u5f15\u5165\u5b89\u5168\u98ce\u9669\u6216\u5305\u542b\u5728\u5176\u8ba1\u7b97\u673a\u4e0a\u8fd0\u884c\u7684\u6076\u610f\u4ee3\u7801\u3002"
+      ],
+      "settings\u0004Whether to allow untrusted elements to include `name` and `id` attributes. These attributes are stripped by default to prevent DOM clobbering attacks.": [
+        "\u662f\u5426\u5141\u8bb8\u4e0d\u53d7\u4fe1\u4efb\u7684\u5143\u7d20\u5305\u542b name \u548c id \u5c5e\u6027\u3002\u9ed8\u8ba4\u60c5\u51b5\u4e0b\uff0c\u8fd9\u4e9b\u5c5e\u6027\u4f1a\u88ab\u79fb\u9664\u4ee5\u9632\u6b62 DOM \u7be1\u6539\u653b\u51fb\u3002"
       ],
       "settings\u0004Whether to apply fuzzy algorithm while filtering on file names": [
         "\u8fc7\u6ee4\u6587\u4ef6\u540d\u65f6\u662f\u5426\u4f7f\u7528\u6a21\u7cca\u7b97\u6cd5"
