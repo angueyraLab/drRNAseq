@@ -188,7 +188,7 @@ def plotBars_Abur2024_Ret(barData, geneSymbol, ax=None, pC=None, pctPlot=False):
         ax              : pyplot axis handle
         pC              : photoreceptor colors for plotting
     """
-    n = np.arange(1,7)
+    n = np.arange(1,17)
     delta = 0
     if pctPlot:
         delta = 18
