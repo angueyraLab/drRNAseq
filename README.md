@@ -1,37 +1,35 @@
-# JupyterLite Demo
+# Zebrafish photoreceptor RNAseq explorer
+> This repository complements  
+> [Transcription factors underlying photoreceptor diversity, Angueyra et al. eLife 2023;12:e81579](https://doi.org/10.7554/eLife.81579)
 
-[![lite-badge](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://jupyterlite.github.io/demo)
+## Data availability
+All relevant data is openly available under "/data/"
+Code to replicate reanalysis of published datasets available under "/code/"
 
-JupyterLite deployed as a static site to GitHub Pages, for demo purposes.
+## Interactive plottrer
 
-## ✨ Try it in your browser ✨
+The interactive plotter can be accessed here: **[angueyraLab.github.io/drRNAseq/lab/](https://angueyralab.github.io/drRNAseq/lab/)**
 
-➡️ **https://jupyterlite.github.io/demo**
+> The interactive plotter is based on [JupyterLite](https://jupyterlite.github.io/demo), which enables the use of Jupyter Notebooks in your browser.  
+> If you are not familiar with Jupyter Notebooks, [this might be a helpful](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
+> Or you can watch [this video](https://youtu.be/DKiI6NfSIe8?t=670)
+> Or read the [Jupyter documentation](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html)
 
-![github-pages](https://user-images.githubusercontent.com/591645/120649478-18258400-c47d-11eb-80e5-185e52ff2702.gif)
+### ✨ How to use ✨
 
-## Requirements
+#### Requirements
 
-JupyterLite is being tested against modern web browsers:
+You must use one these browsers
 
 - Firefox 90+
 - Chromium 89+
+- Chrome 90+
 
-## Deploy your JupyterLite website on GitHub Pages
+#### Instructions
 
-Check out the guide on the JupyterLite documentation: https://jupyterlite.readthedocs.io/en/latest/quickstart/deploy.html
+1. Click [this link](https://angueyraLab.github.io/drRNAseq/lab/) to open the JupyterLite environment
+1. double-click on the "/content/" folder
+1. double-click on the "dr_photoPlotter_Adult.ipynb" notebook
+1. for developmental data through re-analysis of published datasets, double-click on the "dr_photoPlotter_Dev.ipynb" notebook
 
-## Further Information and Updates
-
-For more info, keep an eye on the JupyterLite documentation:
-
-- How-to Guides: https://jupyterlite.readthedocs.io/en/latest/howto/index.html
-- Reference: https://jupyterlite.readthedocs.io/en/latest/reference/index.html
-
-This template provides the Pyodide kernel (`jupyterlite-pyodide-kernel`), the JavaScript kernel (`jupyterlite-javascript-kernel`), and the p5 kernel (`jupyterlite-p5-kernel`), along with other
-optional utilities and extensions to make the JupyterLite experience more enjoyable. See the
-[`requirements.txt` file](requirements.txt) for a list of all the dependencies provided.
-
-For a template based on the Xeus kernel, see the [`jupyterlite/xeus-python-demo` repository](https://github.com/jupyterlite/xeus-python-demo)
-
-
+![Demo video](./demo.gif)
